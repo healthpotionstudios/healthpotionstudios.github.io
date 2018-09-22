@@ -105,8 +105,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-circle{border-radius:50%}
 .w3-round-small{border-radius:2px}.w3-round,.w3-round-medium{border-radius:4px}.w3-round-large{border-radius:8px}.w3-round-xlarge{border-radius:16px}.w3-round-xxlarge{border-radius:32px}
 /*custom*/
-.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 5%}
-
 .w3-container,.w3-panel{padding:0.01em 16px}.w3-panel{margin-top:16px;margin-bottom:16px}
 .w3-code,.w3-codespan{font-family:Consolas,"courier new";font-size:16px}
 .w3-code{width:auto;background-color:#fff;padding:8px 12px;border-left:4px solid #4CAF50;word-wrap:break-word}
@@ -127,10 +125,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-greyscale-max,.w3-grayscale-max,.w3-hover-greyscale:hover,.w3-hover-grayscale:hover{filter:grayscale(100%)}
 .w3-greyscale,.w3-grayscale{filter:grayscale(75%)}.w3-greyscale-min,.w3-grayscale-min{filter:grayscale(50%)}
 /*custom*/
-.w3-hover-grayscale-off:hover{filter:grayscale(0%)}
-.w3-grayscale-30{filter:grayscale(30%)}
-.w3-hover-sepia-off:hover{filter:sepia(0%)}
-
 .w3-sepia{filter:sepia(75%)}.w3-sepia-max,.w3-hover-sepia:hover{filter:sepia(100%)}.w3-sepia-min{filter:sepia(50%)}
 .w3-tiny{font-size:10px!important}.w3-small{font-size:12px!important}.w3-medium{font-size:15px!important}.w3-large{font-size:18px!important}
 .w3-xlarge{font-size:24px!important}.w3-xxlarge{font-size:36px!important}.w3-xxxlarge{font-size:48px!important}.w3-jumbo{font-size:64px!important}
@@ -148,8 +142,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-padding-32{padding-top:32px!important;padding-bottom:32px!important}.w3-padding-48{padding-top:48px!important;padding-bottom:48px!important}
 .w3-padding-64{padding-top:64px!important;padding-bottom:64px!important}
 /*custom*/
-.w3-padding-32-bottom{padding-bottom:32px!important}
-
 .w3-left{float:left!important}.w3-right{float:right!important}
 .w3-button:hover{color:#000!important;background-color:#ccc!important}
 .w3-transparent,.w3-hover-none:hover{background-color:transparent!important}
@@ -174,8 +166,6 @@ hr{border:0;border-top:1px solid #eee;margin:20px 0}
 .w3-deep-purple,.w3-hover-deep-purple:hover{color:#fff!important;background-color:#673ab7!important}
 .w3-red,.w3-hover-red:hover{color:#fff!important;background-color:#f44336!important}
 /*custom*/
-.w3-red-background,.w3-hover-red:hover{background-color:#f44336!important}
-
 .w3-sand,.w3-hover-sand:hover{color:#000!important;background-color:#fdf5e6!important}
 .w3-teal,.w3-hover-teal:hover{color:#fff!important;background-color:#009688!important}
 .w3-yellow,.w3-hover-yellow:hover{color:#000!important;background-color:#ffeb3b!important}

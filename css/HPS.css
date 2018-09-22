@@ -2,3 +2,13 @@
 .dontPeek {
   -webkit-touch-callout: none;
 }
+
+.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 5%}
+
+.w3-hover-grayscale-off:hover{filter:grayscale(0%)}
+.w3-grayscale-30{filter:grayscale(30%)}
+.w3-hover-sepia-off:hover{filter:sepia(0%)}
+
+.w3-padding-32-bottom{padding-bottom:32px!important}
+
+.w3-red-background,.w3-hover-red:hover{background-color:#f44336!important}
