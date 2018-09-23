@@ -1,5 +1,6 @@
 ﻿/* Health Potion Studios 2018 by Alex Wagner */
 .dontPeek {
+  -webkit-user-select:none;
   -webkit-touch-callout: none;
 }
 
