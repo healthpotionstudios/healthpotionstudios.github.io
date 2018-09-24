@@ -114,11 +114,14 @@ body, html {
   </div>
 </div>
 
-<div class="w3-third dontPeek">
+<div class="w3-third">
   <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2>Celestial Patterns TESt7</h2>
-  <img src="images/apps/appIcon_CP.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">
-  <p id="demo">  </p>
+  <h2>Celestial Patterns TESt8</h2>
+  <!--<img src="images/apps/appIcon_CP.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">-->
+  <script>
+  document.write(isNotMobile("<img src='images/apps/appIcon_CP.png' onmouseover='mouseOverZoomOn(this)' onmouseout='mouseOverZoomOff(this)'  style='width:85%' draggable='false'>",
+						     "<img src='images/apps/appIcon_DN.png' style='width:85%' draggable='false' class='dontPeek'>"));	
+  </script>
   </div>
 </div>
 
@@ -166,16 +169,16 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-
+/*
 function mouseOverZoomOn(x) {
     x.style.width = "88%";
 }
 
 function mouseOverZoomOff(x) {
     x.style.width = "85%";
-}
+}*/
 
-document.getElementById("demo").innerHTML = isMobile(); 
+ 
 </script>
 
 </html>
