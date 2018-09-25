@@ -10,12 +10,6 @@ function isNotMobile(linkForDesktop, linkForMobile) {
     return result;
 }
 
-function documentWriteMobile(linkForMobile) {
-	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) 
-	{
-		document.write(linkForMobile);
-	}
-}
 
 function mouseOverZoomOn(x) {
     x.style.width = "88%";
