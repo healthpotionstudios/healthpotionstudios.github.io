@@ -65,13 +65,7 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-	
-	<br>
-<p>
-Window height: <span id="height"></span>
-&nbsp
-Window width: <span id="width"></span>
-</p>
+method: <span id="height"></span>
   </div>
 
   <!-- Navbar on small screens -->
@@ -188,13 +182,11 @@ function toggleFunction() {
 window.onload = resizeBackground;
 
 var heightOutput = document.querySelector('#height');
-var widthOutput = document.querySelector('#width');
 var ratio = 0.5563;
 
   function resizeBackground() { 
   var method = "contain";
     heightOutput.textContent = method;
-    widthOutput.textContent = window.innerWidth;
 	ratio = (window.innerHeight / window.innerWidth);
 	
 	var back = document.getElementById("bgimg-1");
