@@ -23,7 +23,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1 {
+#bgimg-1 {
     background-attachment: fixed;
     background-position: center top;
     background-repeat: no-repeat;
@@ -33,14 +33,14 @@ body, html {
 }
 
 /* First image (Logo. Full height) */
-.bgimg-1 {
+#bgimg-1 {
     background-image: url("images/large_logo.png");
     min-height: 100%;
 }
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1200px) {
-    .bgimg-1{
+    #bgimg-1{
         background-attachment: scroll;
 		background-size: cover;
         //min-height: 400px;
@@ -65,6 +65,13 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+	
+	<br>
+<p>
+Window height: <span id="height"></span>
+&nbsp
+Window width: <span id="width"></span>
+</p>
   </div>
 
   <!-- Navbar on small screens -->
@@ -76,7 +83,7 @@ body, html {
 </div>
 
 <!-- First Parallax Image with Logo Text -->
-<div class="bgimg-1 w3-display-container" id="home">
+<div id="bgimg-1" class="w3-display-container">
 </div>
 
 <!--
@@ -177,15 +184,33 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
-/*
-function mouseOverZoomOn(x) {
-    x.style.width = "88%";
-}
 
-function mouseOverZoomOff(x) {
-    x.style.width = "85%";
-}*/
+window.onload = resizeBackground;
 
+var heightOutput = document.querySelector('#height');
+var widthOutput = document.querySelector('#width');
+var ratio = 0.5563;
+
+  function resizeBackground() { 
+  var method = "contain";
+    heightOutput.textContent = method;
+    widthOutput.textContent = window.innerWidth;
+	ratio = (window.innerHeight / window.innerWidth);
+	
+	var back = document.getElementById("bgimg-1");
+	if (ratio > 0.5563)
+	{
+		method = "cover";
+		back.style.backgroundSize = "cover";
+	}
+	else
+	{
+		method = "contain";
+		back.style.backgroundSize = "contain";
+	}
+	heightOutput.textContent = method;
+	}
+window.onresize = resizeBackground;
  
 </script>
 
