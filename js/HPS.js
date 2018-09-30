@@ -10,6 +10,15 @@ function isNotMobile(linkForDesktop, linkForMobile) {
     return result;
 }
 
+function isNotMobileBool() {
+    var result = true;
+	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) 
+	{
+		result = false;
+	}
+    return result;
+}
+
 
 function mouseOverZoomOn(x) {
     x.style.width = "88%";

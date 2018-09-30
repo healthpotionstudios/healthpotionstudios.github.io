@@ -187,22 +187,22 @@ var heightOutput = document.querySelector('#height');
 var ratio = 0.5563;
 
   function resizeBackground() { 
-  var method = "contain";
-    heightOutput.textContent = method;
+	var method = "";
 	ratio = (window.innerHeight / window.innerWidth);
 	
 	var back = document.getElementById("bgimg-1");
-	if (ratio > 0.5563)
+	if (isNotMobileBool)
 	{
-		method = "cover";
-		back.style.backgroundSize = "cover";
+		if (ratio > 0.5563)
+		{
+			back.style.backgroundSize = "cover";
+		}
+		else
+		{
+			back.style.backgroundSize = "contain";
+		}
 	}
-	else
-	{
-		method = "contain";
-		back.style.backgroundSize = "contain";
-	}
-	heightOutput.textContent = method;
+	heightOutput.textContent = back.style.backgroundSize;
 	}
 window.onresize = resizeBackground;
  
