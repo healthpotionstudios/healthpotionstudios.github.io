@@ -66,7 +66,7 @@ body, html {
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
    
-   <div class="w3-green w3-col">method: <span id="height"></span></div>
+   <div class="w3-green w3-col">method: <b><span id="height"></span></b></div>
 
   </div>
 
@@ -188,7 +188,7 @@ var heightOutput = document.querySelector('#height');
 var ratio = 0.5563;
 
   function resizeBackground() { 
-	var method = "";
+	var method = "cover";
 	ratio = (window.innerHeight / window.innerWidth);
 	
 	var back = document.getElementById("bgimg-1");
@@ -196,14 +196,16 @@ var ratio = 0.5563;
 	{
 		if (ratio > 0.5563)
 		{
+			method = "cover";
 			back.style.backgroundSize = "cover";
 		}
 		else
 		{
+			method = "contain";
 			back.style.backgroundSize = "contain";
 		}
 	}
-	heightOutput.textContent = back.style.backgroundSize;
+	heightOutput.textContent = method;
 	}
 
  
