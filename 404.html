@@ -1,0 +1,93 @@
+<!-- Copyright Health Potion Studios 2018 -->
+<!DOCTYPE html>
+<html>
+<title>Health Potion Studios</title>
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/custom_w3.css">
+<link rel="stylesheet" href="/css/HPS.css">
+<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+
+
+<head>
+<style>
+
+body, html {
+    height: 100%;
+    color: #000;
+}
+
+/* Create a Parallax Effect */
+#bgimg-1 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+	background-color:#000;
+	background-image: url("/images/space background.png");
+    min-height: 100%;
+}
+
+.planet {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width:20%;
+}
+.fixedPlanet {
+    position: fixed;
+    top: 0;
+    right: 0;
+	width: 38%;
+}
+.fixedComp {
+    position: fixed;
+    top: 50%;
+    left: 15%;
+	//max-width: 15px;
+}
+
+.computer {
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 20s linear infinite;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- First Parallax Image with Logo Text -->
+<div id="bgimg-1" class="w3-display-container">
+</div>
+
+<div class="fixedPlanet">
+<img src="/images/planet.svg">
+</div>
+
+<div class="computer fixedComp">
+<img src="/images/computer.png" height="180px">
+</div>
+
+
+</body>
+
+
+
+</html>
