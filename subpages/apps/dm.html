@@ -17,38 +17,17 @@
 <head>
 <style>
 
-body, html {
-    height: 100%;
-    color: #000;
-}
-
-/* Create a Parallax Effect */
-#bgimg-1 {
-    background-attachment: fixed;
-    background-position: center 30px;
-    background-repeat: no-repeat;
-    /*background-size: cover;*/
-	background-size: contain;
-	background-color:#000;
-}
-
-/* First image (Logo. Full height) */
-#bgimg-1 {
-    background-image: url("/images/large_logo.png");
-    min-height: 100%;
-}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1200px) {
-    #bgimg-1{
-        background-attachment: scroll;
-		background-size: cover;
-        /*min-height: 400px;*/
-    }
-}
-
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
 
 </style>
 </head>
@@ -76,53 +55,33 @@ body, html {
   </div>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
-<div id="bgimg-1" class="w3-display-container">
-</div>
-
 
 <br>
 
 <!--App panels-->
-<div class="w3-container2">
-	<div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
-	  <h1 class="font-headings"><b>Try our Apps</b></h1>
+<div class="w3-container2 borderTest">
+	<div class="w3-center w3-padding-32">
+	  <h1 class="font-headings"><b>Danger Mountain</b></h1>
 	</div>
 </div>
 
 <br>
 
-<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-row-padding w3-center w3-margin-top borderTest">
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2 class="font-apps">Danger Mountain</h2>
-  <script>
-    document.write(isNotMobile('<img src="/images/apps/dm/appIcon_dm.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-                   '<img src="/images/apps/dm/appIcon_dm.png" style="width:85%" draggable="false" class="dontPeek">'));	
-  </script>
+<div class="w3-third borderTest">
+  <div class="w3-container">
+  <img src="/images/apps/dm/appIcon_dm.png" style="width:100%" draggable="false" class="dontPeek">
   </div>
 </div>
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2 class="font-apps">Celestial Patterns</h2>
-  <script>
-  document.write(isNotMobile('<img src="/images/apps/cp/appIcon_cp.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-						     '<img src="/images/apps/cp/appIcon_cp.png" style="width:85%" draggable="false" class="dontPeek">'));	
-  </script>
+<div class="w3-twothird borderTest">
+  <div class="w3-card w3-container w3-red-background">
+  <h3><p class="w3-red">Test your skills on this fast-paced arcade game.<br>Climb forever on Danger Mountain!<br>Dodge falling rocks and collect coins all while racing for the high score.<br>
+      Challenge your Friends! Surpass your Enemies!</p></h3>
   </div>
 </div>
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2 class="font-apps">Day & Night</h2>
-  <script>
-    document.write(isNotMobile('<img src="/images/apps/dn/appIcon_dn.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-                   '<img src="/images/apps/dn/appIcon_dn.png" style="width:85%" draggable="false" class="dontPeek">'));	
-  </script>
-  </div>
-</div>
 </div>
 
 
