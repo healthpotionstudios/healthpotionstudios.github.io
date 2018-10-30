@@ -27,7 +27,7 @@ body, html {
     background-attachment: fixed;
     background-position: center 30px;
     background-repeat: no-repeat;
-    //background-size: cover;
+    /*background-size: cover;*/
 	background-size: contain;
 	background-color:#000;
 }
@@ -43,7 +43,7 @@ body, html {
     #bgimg-1{
         background-attachment: scroll;
 		background-size: cover;
-        //min-height: 400px;
+        /*min-height: 400px;*/
     }
 }
 
@@ -65,8 +65,6 @@ body, html {
     <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
     <a href="#portfolio" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PORTFOLIO</a>
     <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
-   
-   <div class="w3-green w3-col">method: <b><span id="height"></span></b></div>
 
   </div>
 
@@ -82,33 +80,10 @@ body, html {
 <div id="bgimg-1" class="w3-display-container">
 </div>
 
-<!--
-<div class="w3-row-padding w3-center w3-margin-top">
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2><b>Danger Mountain</b></h2>
-  <img src="images/apps/appIcon_DM.png" class="w3-grayscale-max w3-hover-grayscale-off" style="width:80%">
-  </div>
-</div>
-
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2><b>Celestial Patterns</b></h2>
-  <img src="images/apps/appIcon_CP.png" class="w3-grayscale-max w3-hover-grayscale-off" style="width:80%">
-  </div>
-</div>
-
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
-  <h2><b>Day & Night</b></h2>
-  <img src="images/apps/appIcon_DN.png" class="w3-grayscale-max w3-hover-grayscale-off" style="width:80%">
-  </div>
-</div>
-</div>
--->
 
 <br>
 
+<!--App panels-->
 <div class="w3-container2">
 	<div class="w3-panel w3-pale-red w3-leftbar w3-border-red">
 	  <h1 class="font-headings"><b>Try our Apps</b></h1>
@@ -121,17 +96,19 @@ body, html {
 <div class="w3-third">
   <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
   <h2 class="font-apps">Danger Mountain</h2>
-  <img src="/images/apps/appIcon_DM.png" class="dontPeek" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)" style="width:85%">
+  <script>
+    document.write(isNotMobile('<img src="/images/apps/DM/appIcon_DM.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
+                   '<img src="/images/apps/DM/appIcon_DM.png" style="width:85%" draggable="false" class="dontPeek">'));	
+  </script>
   </div>
 </div>
 
 <div class="w3-third">
   <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
   <h2 class="font-apps">Celestial Patterns</h2>
-  <!--<img src="/images/apps/appIcon_CP.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">-->
   <script>
-  document.write(isNotMobile('<img src="/images/apps/appIcon_CP.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-						     '<img src="/images/apps/appIcon_CP.png" style="width:85%" draggable="false" class="dontPeek">'));	
+  document.write(isNotMobile('<img src="/images/apps/CP/appIcon_CP.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
+						     '<img src="/images/apps/CP/appIcon_CP.png" style="width:85%" draggable="false" class="dontPeek">'));	
   </script>
   </div>
 </div>
@@ -139,7 +116,10 @@ body, html {
 <div class="w3-third">
   <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
   <h2 class="font-apps">Day & Night</h2>
-  <img src="/images/apps/appIcon_DN.png"  style="width:85%"  class="dontPeek">
+  <script>
+    document.write(isNotMobile('<img src="/images/apps/DN/appIcon_DN.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
+                   '<img src="/images/apps/DN/appIcon_DN.png" style="width:85%" draggable="false" class="dontPeek">'));	
+  </script>
   </div>
 </div>
 </div>
@@ -157,29 +137,19 @@ body, html {
 <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
 </body>
 
-<footer class="w3-center w3-black w3-padding-64">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
-  <div class="w3-xlarge w3-section">
-    <i class="fa fa-facebook-official w3-hover-opacity"></i>
-    <i class="fa fa-instagram w3-hover-opacity"></i>
-    <i class="fa fa-snapchat w3-hover-opacity"></i>
-    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-    <i class="fa fa-twitter w3-hover-opacity"></i>
-    <i class="fa fa-linkedin w3-hover-opacity"></i>
-  </div>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+<!--FOOTER-->
+<footer class="w3-center w3-red w3-padding-16">
+    <div class="w3-xlarge w3-section">
+       <a href="https://twitter.com/HealthPotionDev" class="noUnderline">Check out our Twitter <i class="fa fa-twitter w3-hover-opacity"></i></a>
+    </div>
+  <script>
+      document.write(copyrightCheck());
+  </script>
+
 </footer>
 
+
 <script>
-// Used to toggle the menu on small screens when clicking on the menu button
-function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
-}
 
 window.onload = resizeBackground;
 window.onresize = resizeBackground;

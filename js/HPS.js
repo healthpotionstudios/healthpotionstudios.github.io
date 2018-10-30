@@ -28,4 +28,26 @@ function mouseOverZoomOff(x) {
     x.style.width = "85%";
 }
 
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
 
+function copyrightCheck(){
+	var d = new Date();
+	var n = d.getFullYear();
+	var str = "";
+	if (n<=2018){
+		str = "© Health Potion Studios 2018";
+	}
+	else{
+		str = "© Health Potion Studios 2018-" + n.toString();
+	}
+	//document.getElementById("copyright").innerHTML = str;
+	return str;
+}
