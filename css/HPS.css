@@ -1,7 +1,7 @@
 ﻿/* Health Potion Studios 2018 by Alex Wagner */
 .borderTest{
 	border-style: solid;
-	border-width: 1px;
+	border-width: 0px;
 }
 
 .dontPeek {
@@ -21,7 +21,7 @@
 	background-color:#f0ffff;
 }
 
-.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0 5%}
+.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0% 5%}
 
 .w3-container2{padding:0.01em 22px}
 
@@ -35,3 +35,12 @@
 .w3-darkred-background{background-color:#c2160a!important}
 
 .noUnderline {text-decoration: none}
+
+
+.theme-blue-1 {background-color:#fcfdfd}
+.theme-blue-2 {background-color:#f3f9f9}
+.theme-blue-3 {background-color:#e8f3f4}
+.theme-blue-4 {background-color:#dcedee}
+.theme-blue-5 {background-color:#d1e7e8}
+.theme-blue-6 {background-color:#a9d1d4}
+.theme-blue-7 {background-color:#8cc3c6}
