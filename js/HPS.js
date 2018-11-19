@@ -48,6 +48,5 @@ function copyrightCheck(){
 	else{
 		str = "© Health Potion Studios 2018-" + n.toString();
 	}
-	//document.getElementById("copyright").innerHTML = str;
-	return str;
+	document.getElementById("copyright").innerHTML = str;
 }
