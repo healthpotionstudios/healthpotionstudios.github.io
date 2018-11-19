@@ -1,3 +1,5 @@
+< ?php
+
 <div class="w3-top">
   <div class="w3-bar w3-card w3-animate-top w3-red" id="myNavbar">
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -17,3 +19,5 @@
     <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
+
+?>
