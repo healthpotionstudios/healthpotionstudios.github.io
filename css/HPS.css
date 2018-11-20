@@ -62,3 +62,6 @@
     height: 100%;
     display:block;
 }
+
+
+@media (min-width:650px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
