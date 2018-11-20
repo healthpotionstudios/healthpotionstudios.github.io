@@ -247,7 +247,7 @@
 
     var outlinerContainer = document.createElement('div');
     outlinerContainer.className = 'boxvis' + (query.noln ? ' noln' : '') + (query.nobg ? ' nobg' : '');
-    //document.body.appendChild(outlinerContainer);
+    document.body.appendChild(outlinerContainer);
 
     outlinerContainer.innerHTML = html;
     var addedElements = outlinerContainer.childNodes;
