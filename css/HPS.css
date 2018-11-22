@@ -21,7 +21,7 @@
 	background-color:#f0ffff;
 }
 
-.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0% 5%}
+.w3-row-padding,.w3-row-padding>.w3-half,.w3-row-padding>.w3-third,.w3-row-padding>.w3-twothird,.w3-row-padding>.w3-threequarter,.w3-row-padding>.w3-quarter,.w3-row-padding>.w3-col{padding:0% 3%}
 
 .w3-container2{padding:0.01em 22px}
 
@@ -35,6 +35,7 @@
 .w3-darkred-background{background-color:#c2160a!important}
 
 .noUnderline {text-decoration: none}
+.underlineHover:hover{text-decoration: underline}
 
 
 .theme-blue-1 {background-color:#fcfdfd}
@@ -42,7 +43,7 @@
 .theme-blue-3 {background-color:#e8f3f4}
 .theme-blue-4 {background-color:#dcedee}
 .theme-blue-5 {background-color:#d1e7e8}
-.theme-blue-6 {background-color:#bee2e4}
+.theme-blue-6 {background-color:#bae0e2}
 .theme-blue-7 {background-color:#8cc3c6}
 
 
@@ -64,4 +65,52 @@
 }
 
 
-@media (min-width:650px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}
+.w3-col,.w3-half,.w3-third,.w3-twothird,.w3-threequarter,.w3-quarter{float:left;width:100%}
+
+@media (min-width:650px){.w3-col.m1{width:8.33333%}.w3-col.m2{width:16.66666%}.w3-col.m3,.w3-quarter{width:24.99999%}.w3-col.m4,.w3-third{width:33.33333%}.w3-col.m5{width:41.66666%}.w3-col.m6,.w3-half{width:49.99999%}.w3-col.m7{width:58.33333%}.w3-col.m8,.w3-twothird{width:66.66666%}
+.w3-col.m9,.w3-threequarter{width:74.99999%}.w3-col.m10{width:83.33333%}.w3-col.m11{width:91.66666%}.w3-col.m12{width:99.99999%}}
+
+
+.appIcon-third {
+    float:left;
+    width:100%;
+}
+
+@media (min-width:650px) {
+    .appIcon-third{
+        width:33.33333%;
+    }
+}
+
+.appIcon-third{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+@media (max-width: 650px) {
+    .appIcon-third{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 651px) and (max-width: 900px) {
+    .appIcon-third{
+        padding-left: 0%;
+        padding-right: 0%;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1100px) {
+    .appIcon-third{
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+@media (min-width: 1101px) and (max-width: 1200px) {
+    .appIcon-third{
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
