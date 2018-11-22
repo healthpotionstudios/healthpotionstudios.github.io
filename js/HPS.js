@@ -50,3 +50,5 @@ function copyrightCheck(){
 	}
 	document.getElementById("copyright").innerHTML = str;
 }
+
+
