@@ -170,6 +170,10 @@ function createColon(appendID, ID)
             {
                 box.setAttribute("checked", (colon[y][x]).toString());
             }
+            else
+            {
+                box.setAttribute("disabled", "true");
+            }
             
             document.getElementById(appendID).appendChild(box);
         }
@@ -240,10 +244,12 @@ function updateDisplay(ID, number, place)
             {
                 
                 document.getElementById(ID).checked = true;
+                document.getElementById(ID).disabled = false;
             }
             else
             {
                 document.getElementById(ID).checked = false;
+                document.getElementById(ID).disabled = true;
             }
         }
     }
