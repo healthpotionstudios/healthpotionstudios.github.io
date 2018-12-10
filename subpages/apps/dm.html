@@ -112,6 +112,7 @@
     $("#footer").load("/jquery/footer.html");
     $("#PrivPolicyText").load("/jquery/privpolicy-admob-gamecenter.html");
   });
+  fillAppNameDelay("Danger Mountain");
 </script>
 
 
@@ -242,7 +243,7 @@
         <h2 class="font-headings w3-center">Privacy Policy</h2>
     </div>
     <div class="borderTest">
-        <button onclick="toggleFunction('PrivPolicy')" class="w3-button">View Below <i class="fa fa-caret-down"></i></button>
+        <button onclick="toggleFunction('PrivPolicy')" class="w3-button"><b>View Below</b> <i class="fa fa-caret-down"></i></button>
         <div id="PrivPolicy" class="dropdown">
             <div id="PrivPolicyText"></div>
         </div>

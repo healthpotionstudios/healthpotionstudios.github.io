@@ -51,4 +51,11 @@ function copyrightCheck(){
 	document.getElementById("copyright").innerHTML = str;
 }
 
+function fillAppNameDelay (name){
+    var x = setTimeout(function() { fillAppName(name) }, 1000);
+}
 
+function fillAppName (name){
+    document.getElementById("appname1").innerHTML = name;
+    document.getElementById("appname2").innerHTML = name;
+}
