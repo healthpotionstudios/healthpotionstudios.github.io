@@ -110,6 +110,7 @@
   $(function(){
     $("#header").load("/jquery/header.html");
     $("#footer").load("/jquery/footer.html");
+    $("#PrivPolicyText").load("/jquery/privpolicy-admob-gamecenter.html");
   });
 </script>
 
@@ -193,53 +194,69 @@
 
 <!--Slideshow-->
 <div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 roundedBot">
-        <div class="borderTest">
-            <div class="row-spacer-TB borderTest">
-                    <h2 class="font-headings">Screenshots!</h2>
-            </div>
-            <div class=" w3-container">
-                <div class="w3-display-container">
-                    <div class="w3-content">
-                        <img class="mySlides img" src="/images/apps/dm/1.png">
-                        <img class="mySlides img" src="/images/apps/dm/2.png">
-                        <img class="mySlides img" src="/images/apps/dm/3.png">
-                        <img class="mySlides img" src="/images/apps/dm/4.png">
-                        <img class="mySlides img" src="/images/apps/dm/5.png">
-                    </div>
-                    <!--<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">
-                        &#10094;
-                    </button>
-                    <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">
-                        &#10095;
-                    </button>-->
+    <div class="borderTest">
+        <div class="row-spacer-TB borderTest">
+                <h2 class="font-headings">Screenshots!</h2>
+        </div>
+        <div class=" w3-container">
+            <div class="w3-display-container">
+                <div class="w3-content">
+                    <img class="mySlides img" src="/images/apps/dm/1.png">
+                    <img class="mySlides img" src="/images/apps/dm/2.png">
+                    <img class="mySlides img" src="/images/apps/dm/3.png">
+                    <img class="mySlides img" src="/images/apps/dm/4.png">
+                    <img class="mySlides img" src="/images/apps/dm/5.png">
                 </div>
+                <!--<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">
+                    &#10094;
+                </button>
+                <button class="w3-button w3-display-right w3-black" onclick="plusDivs(1)">
+                    &#10095;
+                </button>-->
             </div>
-            <div class="w3-center">
-                <div class="w3-section" style="display:block">
-                    <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                    <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                    <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
-                    <button class="w3-button demo" onclick="currentDiv(4)">4</button>
-                    <button class="w3-button demo" onclick="currentDiv(5)">5</button>  
-                </div>
+        </div>
+        <div class="w3-center">
+            <div class="w3-section" style="display:block">
+                <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
+                <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
+                <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
+                <button class="w3-button demo" onclick="currentDiv(4)">4</button>
+                <button class="w3-button demo" onclick="currentDiv(5)">5</button>  
             </div>
-            <div class="row-spacer-TB borderTest">&nbsp</div>
+        </div>
+        <div class="row-spacer-TB borderTest">&nbsp</div>
+    </div>
+</div>
+
+
+
+
+<!--spacer for priv policy-->
+<div class="row-spacer-TB borderTest">&nbsp</div>
+<div class="row-spacer-TB borderTest">&nbsp</div>
+
+
+<!--privacy policy-->
+<div class="w3-row-padding borderTest row-margins-LR theme-blue-5 roundedTop roundedBot">
+    <div class="row-spacer-TB borderTest">
+        <h2 class="font-headings w3-center">Privacy Policy</h2>
+    </div>
+    <div class="borderTest">
+        <button onclick="toggleFunction('PrivPolicy')" class="w3-button">View Below <i class="fa fa-caret-down"></i></button>
+        <div id="PrivPolicy" class="dropdown">
+            <div id="PrivPolicyText"></div>
         </div>
     </div>
+    <div class="row-spacer-TB borderTest">&nbsp</div>
+</div>
+
+
+<!--spacer for footer-->
+<div class="row-spacer-TB borderTest">&nbsp</div>
+<div class="row-spacer-TB borderTest">&nbsp</div>
 
 
 
-
-
-
-
-<h1><font color="cc0000">Health Potion Studios</font></h1>
-<p><b>Heavy</b> development coming maybe soon.</p>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
 
 <!--FOOTER-->
 <div id="footer"></div>
