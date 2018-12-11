@@ -11,9 +11,12 @@
 <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <script type="text/javascript" src="/js/HPS.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
 
 <head>
 <style>
@@ -111,6 +114,7 @@
     $("#header").load("/jquery/header.html");
     $("#footer").load("/jquery/footer.html");
     $("#PrivPolicyText").load("/jquery/privpolicy-admob-gamecenter.html");
+    $('.aniview').AniView();
   });
   fillAppNameDelay("Danger Mountain");
 </script>
@@ -138,7 +142,7 @@
 
 <!--App panels--> <!--themes 4,5,6,7-->
 <!--pic / description-->
-<div class="w3-row-padding w3-center w3-margin-top borderTest row-margins-LR theme-blue-5 roundedTop">
+<div class="w3-row-padding w3-center w3-margin-top borderTest row-margins-LR theme-blue-5 roundedTop aniview" data-av-animation="fadeInRightBig">
 
     <div class="row-spacer-TB borderTest">&nbsp</div>
 
@@ -163,7 +167,7 @@
 
 
 <!--download now-->
-<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6">
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 aniview" data-av-animation="fadeInLeftBig">
     <div class="borderTest">
         <div class="row-spacer-TB borderTest">
                 <h2 class="font-headings">Download Now!</h2>
@@ -177,7 +181,7 @@
 
 
 <!--Trailer-->
-<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-5">
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-5 aniview" data-av-animation="fadeInRightBig">
     <div class="row-spacer-TB borderTest">
         <h2 class="font-headings">Watch the trailer!</h2>
     </div>
@@ -194,7 +198,7 @@
 
 
 <!--Slideshow-->
-<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 roundedBot">
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 roundedBot aniview" data-av-animation="fadeInLeftBig">
     <div class="borderTest">
         <div class="row-spacer-TB borderTest">
                 <h2 class="font-headings">Screenshots!</h2>
@@ -238,7 +242,7 @@
 
 
 <!--privacy policy-->
-<div class="w3-row-padding borderTest row-margins-LR theme-blue-5 roundedTop roundedBot">
+<div class="w3-row-padding borderTest row-margins-LR theme-blue-5 roundedTop roundedBot aniview" data-av-animation="fadeInRightBig">
     <div class="row-spacer-TB borderTest">
         <h2 class="font-headings w3-center">Privacy Policy</h2>
     </div>
