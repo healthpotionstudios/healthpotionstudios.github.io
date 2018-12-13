@@ -252,11 +252,11 @@
         </div>
         <div class="w3-center">
             <div class="w3-section" style="display:block">
-                <button class="w3-button" onclick="currentDiv(1)">1</button> 
-                <button class="w3-button" onclick="currentDiv(2)">2</button> 
-                <button class="w3-button" onclick="currentDiv(3)">3</button> 
-                <button class="w3-button" onclick="currentDiv(4)">4</button>
-                <button class="w3-button" onclick="currentDiv(5)">5</button>  
+                <button class="w3-button slideNumber" onclick="currentDiv(1)">1</button> 
+                <button class="w3-button slideNumber" onclick="currentDiv(2)">2</button> 
+                <button class="w3-button slideNumber" onclick="currentDiv(3)">3</button> 
+                <button class="w3-button slideNumber" onclick="currentDiv(4)">4</button>
+                <button class="w3-button slideNumber" onclick="currentDiv(5)">5</button>  
             </div>
         </div>
         <div class="row-spacer-TB borderTest">&nbsp</div>
@@ -316,7 +316,7 @@
     function showDivs(n) {
       var i;
       var x = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("demo");
+      var dots = document.getElementsByClassName("slideNumber");
       if (n > x.length) {slideIndex = 1}    
       if (n < 1) {slideIndex = x.length}
       for (i = 0; i < x.length; i++) {
