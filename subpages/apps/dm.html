@@ -81,7 +81,7 @@
     }
 }
 
-.img{
+.slideshowImg{
     width:40%;
     /*padding-left: 5%;
     padding-right: 5%;*/
@@ -89,7 +89,7 @@
 }
 
 @media (max-width: 650px) {
-    .img {
+    .slideshowImg {
         width:50%; 
     }
 }
@@ -115,10 +115,22 @@
 
 @media (max-width: 700px) {
     .h3fontSize{
-    font-size: 20px;
-}
+        font-size: 20px;
+    }
 }
 
+.privPolicyPaddingBot{
+    padding-bottom: 10px;
+}
+
+.appHeaderPadding{
+    padding-top: 25px;
+    padding-bottom: 0px;
+}
+
+.appHeaderFontSize{
+    font-size: 48px;
+}
 
 </style>
 
@@ -145,12 +157,11 @@
 
 
 <div class="w3-container2 borderTest">
-	<div class="w3-center w3-padding-32">
-	  <h1 class="font-headings"><b>Danger Mountain</b></h1>
+	<div class="w3-center appHeaderPadding">
+	  <h1 class="font-headings appHeaderFontSize"><b>Danger Mountain</b></h1>
 	</div>
 </div>
 
-<br>
 
 
 <!--App panels--> <!--themes 4,5,6,7-->
@@ -219,11 +230,11 @@
         <div class=" w3-container">
             <div class="w3-display-container">
                 <div class="w3-content">
-                    <img class="mySlides img" src="/images/apps/dm/1.png">
-                    <img class="mySlides img" src="/images/apps/dm/2.png">
-                    <img class="mySlides img" src="/images/apps/dm/3.png">
-                    <img class="mySlides img" src="/images/apps/dm/4.png">
-                    <img class="mySlides img" src="/images/apps/dm/5.png">
+                    <img class="mySlides slideshowImg" src="/images/apps/dm/1.png">
+                    <img class="mySlides slideshowImg" src="/images/apps/dm/2.png">
+                    <img class="mySlides slideshowImg" src="/images/apps/dm/3.png">
+                    <img class="mySlides slideshowImg" src="/images/apps/dm/4.png">
+                    <img class="mySlides slideshowImg" src="/images/apps/dm/5.png">
                 </div>
                 <!--<button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">
                     &#10094;
@@ -235,11 +246,11 @@
         </div>
         <div class="w3-center">
             <div class="w3-section" style="display:block">
-                <button class="w3-button demo" onclick="currentDiv(1)">1</button> 
-                <button class="w3-button demo" onclick="currentDiv(2)">2</button> 
-                <button class="w3-button demo" onclick="currentDiv(3)">3</button> 
-                <button class="w3-button demo" onclick="currentDiv(4)">4</button>
-                <button class="w3-button demo" onclick="currentDiv(5)">5</button>  
+                <button class="w3-button" onclick="currentDiv(1)">1</button> 
+                <button class="w3-button" onclick="currentDiv(2)">2</button> 
+                <button class="w3-button" onclick="currentDiv(3)">3</button> 
+                <button class="w3-button" onclick="currentDiv(4)">4</button>
+                <button class="w3-button" onclick="currentDiv(5)">5</button>  
             </div>
         </div>
         <div class="row-spacer-TB borderTest">&nbsp</div>
@@ -263,7 +274,7 @@
         <div class="w3-center">
         <button onclick="toggleFunction('PrivPolicy')" class="w3-button"><i class="fa fa-caret-down"></i> <b>View Below</b> <i class="fa fa-caret-down"></i></button>
         </div>
-        <div id="PrivPolicy" class="dropdown">
+        <div id="PrivPolicy" class="dropdown privPolicyPaddingBot">
             <div id="PrivPolicyText"></div>
         </div>
     </div>
