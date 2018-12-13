@@ -15,6 +15,10 @@
 <script type="text/javascript" src="/js/HPS.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+<!--  https://daneden.github.io/animate.css/  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<!--  https://jjcosgrove.github.io/jquery-aniview/  -->
+<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
 
 <head>
 <style>
@@ -64,6 +68,7 @@ body, html {
   $(function(){
     $("#header").load("/jquery/header.html");
     $("#footer").load("/jquery/footer.html");
+    $('.aniview').AniView();
   });
 </script>
 
@@ -98,7 +103,7 @@ body, html {
 <div class="w3-row-padding w3-center w3-margin-top">
 
 <div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
+  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed0" data-av-animation="fadeInRight">
   <h2 class="font-apps">Danger Mountain</h2>
   <a href="/subpages/apps/dm.html">
     <script>
@@ -110,7 +115,7 @@ body, html {
 </div>
 
 <div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
+  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed1" data-av-animation="fadeInRight">
   <h2 class="font-apps">Celestial Patterns</h2>
   <script>
   document.write(isNotMobile('<img src="/images/apps/cp/appIcon_cp.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
@@ -120,7 +125,7 @@ body, html {
 </div>
 
 <div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background">
+  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed2" data-av-animation="fadeInRight">
   <h2 class="font-apps">Day & Night</h2>
   <script>
     document.write(isNotMobile('<img src="/images/apps/dn/appIcon_dn.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
