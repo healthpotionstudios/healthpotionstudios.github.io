@@ -117,8 +117,15 @@
 
 @media (min-width: 1101px) and (max-width: 1200px) {
     .appIcon-third{
-        padding-left: 3%;
-        padding-right: 3%;
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    .appIcon-third{
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }
 
