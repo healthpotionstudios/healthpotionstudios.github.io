@@ -1,0 +1,196 @@
+<!-- Copyright Health Potion Studios 2018 -->
+<!DOCTYPE html>
+<html>
+<title>Health Potion Studios</title>
+<link rel="shortcut icon" href="/images/favicon.ico">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/custom_w3.css">
+<link rel="stylesheet" href="/css/HPS.css">
+<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+<script type="text/javascript" src="/js/HPS.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!--  https://daneden.github.io/animate.css/  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+<!--  https://jjcosgrove.github.io/jquery-aniview/  -->
+<script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
+
+<head>
+<style>
+
+
+body, html {
+    height: 100%;
+}
+
+/* Create a Parallax Effect */
+#bgimg-1 {
+  position: relative;
+    background-attachment: fixed;
+    background-position: center 0px;
+    background-repeat:repeat;
+    background-size: cover;
+    background-size: 100px;
+	/*background-size: contain;*/
+}
+
+/* First image (Logo. Full height) */
+#bgimg-1 {
+    background-image: url("/images/dots.png");
+    min-height: 100%;
+}
+
+
+.quoteHeight {
+    height: 100vh;
+    width: 100vw;
+}
+
+.c {
+  background-color: rgb(203, 241, 241);
+}
+
+.dis1{
+  display: none;
+}
+.dis2{
+  display: inherit;
+}
+
+@media (max-width: 650px) {
+  .c {
+  background-color: rgb(180, 158, 202);
+}
+.dis1{
+  display:inherit;
+}
+.dis2{
+  display: none;
+}
+}
+
+.center{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.contain
+{
+  width: 35%;
+  background-color: rgb(196, 202, 255);
+}
+
+.right{
+  text-align: right;
+}
+
+.pad {
+  padding: 30px;
+}
+
+.space{
+  height: 10px;
+}
+
+
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+.oddRadius{
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 50px 20px;
+}
+
+</style>
+
+<script> 
+  $(function(){
+    $("#header").load("/jquery/header.html");
+    $("#footer").load("/jquery/footer.html");
+    $('.aniview').AniView();
+  });
+</script>
+
+
+</head>
+
+<body class="light-blue-background">
+
+<!-- Navbar (sit on top) -->
+<div id="header"></div>
+
+<!--https://www.youtube.com/watch?v=YCI8uqePkrc-->
+<!--https://www.youtube.com/watch?v=VfmTi4k51aQ-->
+<!--https://www.theinformation.com/about-->
+
+
+<div id="bgimg-1" class="c">
+<div class="w3-center contain w3-display-middle pad">
+  <b>"Everyone knows there's only 2 ways to create a company name. It's either your last name or a couple of words you like the sound of."</b>
+  <br>
+  <div class="space"></div>
+  <div class="right">
+    <i>-Mr Robert Health-Potion </i>
+  </div>
+</div>
+</div>
+
+
+<br>
+
+<!--App panels-->
+<div class="w3-container2 dis1">
+	<div class="w3-panel w3-pale-red w3-leftbar w3-border-green oddRadius">
+	  <h1 class="font-headings"><b>I show sometimes</b></h1>
+	</div>
+</div>
+
+<div class="w3-container2 dis2">
+	<div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
+	  <h1 class="font-headings"><b>I show all the other times</b></h1>
+	</div>
+</div>
+
+<br>
+
+
+
+
+
+<h1><font color="cc0000">Health Potion Studios</font></h1>
+<p><b>Heavy</b> development coming maybe soon.</p>
+<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working........" style="width:200px;height:auto;"><br>
+
+
+
+
+
+
+
+<!--FOOTER-->
+<div id="footer"></div>
+
+
+</body>
+
+
+
+
+
+<script>
+
+</script>
+
+</html>
