@@ -53,11 +53,9 @@
     .displayBlockLarge{
       display: inherit;
     }
-
     .tableSocialSmallWidth{
   width: 150px;
   }
-
     @media (max-width: 650px) {
       .c {
       background-color: rgb(180, 158, 202);
@@ -117,6 +115,43 @@
       margin-right: auto;
   }
   
+  .memberMargins{
+    margin: 15px;
+    margin: 15px;
+  }
+  
+  .memberWidth{
+    width: 970px;
+  }
+  
+  @media (max-width: 990px) {
+    .memberWidth{
+    width: 100%;
+  }
+  }
+  
+  .memberCenter{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .memberImageWidth{
+    width:150px;
+  }
+  
+  
+  
+  .dropdownClose {
+      max-height: 0;
+      transition: max-height 0.45s ease-out;
+      overflow: hidden;
+  }
+  
+  .dropdownOpen {
+      max-height: 700px;
+      transition: max-height 0.60s ease-in;
+      overflow: hidden;
+  }
+  
   
   
   
@@ -166,9 +201,9 @@
     <!-- Navbar (sit on top) -->
     <div id="header"></div>
     
-    <!--https://www.youtube.com/watch?v=YCI8uqePkrc-->
-    <!--https://www.youtube.com/watch?v=VfmTi4k51aQ-->
-    <!--https://www.theinformation.com/about-->
+    <!--https://www.youtube.com/watch?v=YCI8uqePkrc -->
+    <!--https://www.youtube.com/watch?v=VfmTi4k51aQ -->
+    <!--https://www.theinformation.com/about -->
     
     
     <div id="bgimg-1" class="c">
@@ -177,7 +212,7 @@
       <br>
       <div class="space"></div>
       <div class="right">
-        <i>-Mr Robert Health-Potion </i>
+        <i>-Mr Health-Potion </i>
       </div>
     </div>
     </div>
@@ -200,59 +235,91 @@
     
     <br>
     
-    <div class="b ba">
-      <div class="b block">
-        <img src="https://uploads.disquscdn.com/images/95675d0d2c90f7c5eef593103fd7709339446eceb6b9d9174a6d976b221027a4.jpg" style="width:150px" draggable="false" class="dontPeek">
-      </div>
   
-      <div class="alignMid b block">
-        <div class="">
-          Alex Wagner
-          <br>
-          <b>Programmer</b>
+    <!---->
+    <!---->
+  
+    <div class="memberMargins">
+      <div class="b ba memberCenter memberWidth memberMargins">
+        <div class="b block">
+          <img src="https://uploads.disquscdn.com/images/95675d0d2c90f7c5eef593103fd7709339446eceb6b9d9174a6d976b221027a4.jpg" draggable="false" class="memberImageWidth dontPeek">
         </div>
-      </div>
-  
-      <div class="space b bd"></div>
-  
-      <div>
-        <div class="b bc block" style="width:150px">
-          <div>
-            Twitter <br>
-            instragrm <br>
-            soundcloud
+    
+        <div class="alignMid b block">
+          <div class="">
+            Alex Wagner
+            <br>
+            <b>Programmer</b>
           </div>
         </div>
   
-        <div class="b bb block">
-          This is my description. here goes the words.
+        <div class="alignMid b block" style="padding-left: 500px; ">
+          V
         </div>
+    
+        <div class="space b be"></div>
+    
+        <table class="b bb">
+          <tr>
+            <td class="b bc tableSocial tableSocialSmallWidth">
+                <div style="width:1000px;" class="displayBlockLarge ">
+                    Twitter <br>
+                    instragrm <br>
+                    soundcloud
+                </div>
+            </td>
+            <td class="b bd tableDescription">
+                This is my description. here goes the words. This is my description. here goes the words.
+            </td>
+          </tr>
+          
+          <tr>
+            <td colspan="2" class="b bc">
+              <div style="width:1000px;" class="displayBlockSmall b tableSocial">
+                  Twitter <br>
+                  instragrm <br>
+                  soundcloud
+              </div>
+            </td>
+          </tr>
+        </table>
+    
+        
+      </div>
+    </div>
+    
+  
+  
+  
+  
+  <br><br><br>
+  
+  
+  
+  
+  <div class="memberMargins">
+    <div class="b ba memberCenter memberWidth memberMargins">
+      <div class="b block">
+        <img src="https://uploads.disquscdn.com/images/95675d0d2c90f7c5eef593103fd7709339446eceb6b9d9174a6d976b221027a4.jpg" draggable="false" class="memberImageWidth dontPeek">
       </div>
   
-      <div class="b bc alignmid displayBlockSmall">
-        Follow on Twitter
+      <div class="alignMid  block">
+          <table  style="width:100%;">
+              <tr>
+                <td class="b">
+                    Alex Wagner
+                    <br>
+                    <b>Programmer</b>
+                </td>
+                <td class="b">
+                    V
+                </td>
+              </tr>
+            </table>
       </div>
       
-    </div>
   
   
-      <!--above= div blocks    below=table -->
-      <br><br><br>
-  
-  
-  
-    <div class="b ba">
-      <div class="b block">
-        <img src="https://uploads.disquscdn.com/images/95675d0d2c90f7c5eef593103fd7709339446eceb6b9d9174a6d976b221027a4.jpg" style="width:150px" draggable="false" class="dontPeek">
-      </div>
-  
-      <div class="alignMid b block">
-        <div class="">
-          Alex Wagner
-          <br>
-          <b>Programmer</b>
-        </div>
-      </div>
   
       <div class="space b be"></div>
   
@@ -271,7 +338,7 @@
         </tr>
         
         <tr>
-          <td colspan="2" class="b be">
+          <td colspan="2" class="b bc">
             <div style="width:1000px;" class="displayBlockSmall b tableSocial">
                 Twitter <br>
                 instragrm <br>
@@ -283,7 +350,97 @@
   
       
     </div>
+  </div>
   
+  
+  
+  
+  <!---->
+  <!---->
+  <br><br><br>
+  
+  
+  
+  
+  <div class="memberMargins">
+    <div class="b ba memberCenter memberWidth memberMargins">
+      <div class="alignMid">
+          <table  style="width:100%;">
+              <tr>
+                <td class="b memberImageWidth">
+                    <img src="https://uploads.disquscdn.com/images/95675d0d2c90f7c5eef593103fd7709339446eceb6b9d9174a6d976b221027a4.jpg" draggable="false" class="memberImageWidth dontPeek">
+                </td>
+                <td style="width:15px;" class="b">
+                  &nbsp;
+                </td>
+                <td class="b">
+                    Alex Wagner
+                    <br>
+                    <b>Programmer</b>
+                </td>
+                <td class="b" style="width:60px">
+                  <div style="padding-right:25px; text-align:right">
+                      <h2><i id="mem1arrow" onclick="drop('mem1')" class="fas fa-angle-down"></i></h2>
+  
+                  </div>
+                </td>
+              </tr>
+            </table>
+      </div>
+  
+      <!--animate-->
+      <div id="mem1" class="dropdownClose">
+          <div class="space b be"></div>
+  
+          <table class="b bb">
+            <tr>
+              <td class="b bc tableSocial tableSocialSmallWidth">
+                  <div style="width:1000px;" class="displayBlockLarge ">
+                      Twitter <br>
+                      instragrm <br>
+                      soundcloud
+                  </div>
+              </td>
+              <td class="b bd tableDescription">
+                  This is my description. here goes the words. This is my description. here goes the words.
+              </td>
+            </tr>
+            
+            <tr>
+              <td colspan="2" class="b bc">
+                <div style="width:1000px;" class="displayBlockSmall b tableSocial">
+                    Twitter <br>
+                    instragrm <br>
+                    soundcloud
+                </div>
+              </td>
+            </tr>
+          </table>
+      </div>
+      <!--animate-->
+      
+    </div>
+  </div>
+  
+  
+  <script>
+      function drop(ID) {
+        var x = document.getElementById(ID);
+        var arrow = document.getElementById(ID + "arrow");
+        if (x.className.indexOf("dropdownClose") == -1) 
+        {
+          //close
+          x.className = x.className.replace("dropdownOpen", "dropdownClose");
+          arrow.className = arrow.className.replace("up", "down");
+        } 
+        else 
+        { 
+          //open
+          x.className = x.className.replace("dropdownClose", "dropdownOpen");
+          arrow.className = arrow.className.replace("down", "up");
+        }
+      }
+      </script>
     
     
     
