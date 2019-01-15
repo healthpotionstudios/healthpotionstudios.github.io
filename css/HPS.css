@@ -193,3 +193,121 @@
     -moz-animation-delay:    .6s;
     -webkit-animation-delay: .6s;
 }
+
+/*App Page specifics*/
+.row-margins-LR{
+    margin: 0 5% 0 5%;
+  }
+  
+  .row-spacer-TB{
+    clear:left;
+    /*padding: 25px 25px;*/
+    padding: .5% .5%;
+  }
+  
+  .row-spacer-TB-small{
+    clear:left;
+    padding: .25% .25%;
+  }
+  
+  /*video padding portrait*/
+  .videoPaddingPort{
+      padding-left: 15%;
+      padding-right: 15%;
+  
+  }
+  
+  @media (max-width: 700px) {
+      .videoPaddingPort{
+          padding-left: 5%;
+          padding-right: 5%;
+      }
+  }
+  
+  @media (min-width: 701px) and (max-width: 900px) {
+      .videoPaddingPort{
+          padding-left: 8%;
+          padding-right: 8%;
+      }
+  }
+  
+  @media (min-width: 901px) and (max-width: 1100px) {
+      .videoPaddingPort{
+          padding-left: 10%;
+          padding-right: 10%;
+      }
+  }
+  
+  @media (min-width: 1101px) and (max-width: 1200px) {
+      .videoPaddingPort{
+          padding-left: 13%;
+          padding-right: 13%;
+      }
+  }
+  
+  .slideshowImgPort{
+      width:35%;
+      margin: auto;
+  }
+  
+  @media (max-width: 700px) {
+      .slideshowImgPort {
+          width:80%; 
+      }
+  }
+  
+  @media (min-width: 701px) and (max-width: 800px) {
+      .slideshowImgPort {
+          width:50%; 
+      }
+  }
+  
+  @media (min-width: 801px) and (max-width: 1000px) {
+      .slideshowImgPort {
+          width:40%; 
+      }
+  }
+  
+  .width100{
+      width: 100%;
+      position: relative;
+  }
+      
+  .roundedTop{
+      border-top-left-radius: 50px;
+      border-top-right-radius: 50px;
+  }
+  
+  .roundedBot{
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+  }
+  
+  .h3fontSize{
+      font-size: 24px;
+  }
+  
+  @media (max-width: 700px) {
+      .h3fontSize{
+          font-size: 20px;
+      }
+  }
+  
+  .privPolicyPaddingBot{
+      padding-bottom: 10px;
+  }
+  
+  .appHeaderPadding{
+      padding-top: 25px;
+      padding-bottom: 0px;
+  }
+  
+  .appHeaderFontSize{
+      font-size: 48px;
+  }
+  
+  @media (max-width: 700px) {
+      .appHeaderFontSize{
+          font-size: 42px;
+      }
+  }
