@@ -43,10 +43,10 @@ function copyrightCheck(){
 	var n = d.getFullYear();
 	var str = "";
 	if (n<=2018){
-		str = "© Health Potion Studios, LLC 2018";
+		str = "&copy; Health Potion Studios, LLC 2018";
 	}
 	else{
-		str = "© Health Potion Studios, LLC 2018-" + n.toString();
+		str = "&copy; Health Potion Studios, LLC 2018-" + n.toString();
 	}
 	document.getElementById("copyright").innerHTML = str;
 }
