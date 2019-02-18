@@ -205,10 +205,11 @@
     padding: .5% .5%;
   }
 
-.row-spacer-T{
+.row-spacer-TnoB{
     clear:left;
     /*padding: 25px 25px;*/
     padding-top: .5%;
+	padding-bottom: 0;
   }
   
   .row-spacer-TB-small{
@@ -216,9 +217,10 @@
     padding: .25% .25%;
   }
 
-.row-spacer-T-small{
+.row-spacer-TnoB-small{
     clear:left;
     padding-top: .25%;
+	padding-bottom: 0;
   }
   
   /*video padding portrait*/
