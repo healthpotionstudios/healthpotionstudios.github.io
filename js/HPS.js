@@ -59,3 +59,13 @@ function fillAppName (name){
     document.getElementById("appname1").innerHTML = name;
     document.getElementById("appname2").innerHTML = name;
 }
+
+fuction specialCode()
+{
+	var d = new Date();
+	var n = d.getMonth();
+	n = n+1;
+	if (n==2){
+		document.write('<br><p class="h3fontSize">"Since it is Feb use code: <b>CODE</b> for stuff"</p>');
+	}
+}
