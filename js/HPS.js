@@ -60,7 +60,7 @@ function fillAppName (name){
     document.getElementById("appname2").innerHTML = name;
 }
 
-fuction specialCode()
+function specialCode()
 {
 	var d = new Date();
 	var n = d.getMonth();
