@@ -204,10 +204,21 @@
     /*padding: 25px 25px;*/
     padding: .5% .5%;
   }
+
+.row-spacer-T{
+    clear:left;
+    /*padding: 25px 25px;*/
+    padding-top: .5%;
+  }
   
   .row-spacer-TB-small{
     clear:left;
     padding: .25% .25%;
+  }
+
+.row-spacer-T-small{
+    clear:left;
+    padding-top: .25%;
   }
   
   /*video padding portrait*/
