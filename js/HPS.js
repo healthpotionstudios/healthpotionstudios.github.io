@@ -71,7 +71,7 @@ function specialCode()
     if (n==10){
 		document.write('<br><p class="h3fontSize">Since it is October use code: <b>2spooky</b> to unlock a spooky character!</p>');
     }
-    if (n==2){
+    if (n==12){
 		document.write('<br><p class="h3fontSize">Since it is December use code: <b>itsChristmas</b> for some free coins!</p>');
 	}
 }
