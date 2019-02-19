@@ -65,7 +65,13 @@ function specialCode()
 	var d = new Date();
 	var n = d.getMonth();
 	n = n+1;
-	if (n==2){
-		document.write('<br><p class="h3fontSize">Since it is Feb use code: <b>CODE</b> for stuff</p>');
+	if (n==7){
+		document.write('<br><p class="h3fontSize">Since it is July use code: <b>fireworks</b> for some more free powerups!</p>');
+    }
+    if (n==10){
+		document.write('<br><p class="h3fontSize">Since it is October use code: <b>2spooky</b> to unlock a spooky character!</p>');
+    }
+    if (n==2){
+		document.write('<br><p class="h3fontSize">Since it is December use code: <b>itsChristmas</b> for some free coins!</p>');
 	}
 }
