@@ -11,7 +11,8 @@
 <link rel="stylesheet" href="/css/HPS.css">
 <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 <script type="text/javascript" src="/js/HPS.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -23,335 +24,419 @@
 
 <head>
     <style>
-    body, html {
-        height: 100%;
-    }
-    /* Create a Parallax Effect */
-    #bgimg-1 {
-      position: relative;
-        background-attachment: fixed;
-        background-position: center 0px;
-        background-repeat:repeat;
-        background-size: cover;
-        background-size: 100px;
-      /*background-size: contain;*/
-    }
-    /* First image (Logo. Full height) */
-    #bgimg-1 {
-        background-image: url("/images/dots.png");
-        min-height: 100%;
-    }
-    .quoteHeight {
-        height: 100vh;
-        width: 100vw;
-    }
-    .c {
-      background-color: rgb(203, 241, 241);
-    }
-    .displayBlockSmall{
-      display: none;
-    }
-    .displayBlockLarge{
-      display: inherit;
-    }
-    .tableSocialSmallWidth{
-  width: 150px;
-  }
-    @media (max-width: 650px) {
-      .c {
-      background-color: rgb(180, 158, 202);
-    }
-    .displayBlockSmall{
-      display:inherit;
-    }
-    .displayBlockLarge{
-      display: none;
-    }
-    .tableSocialSmallWidth{
-  width: 1px;
-  }
-    }
-    .center{
-      display: table-cell;
-      vertical-align: middle;
-      text-align: center;
-    }
-    .contain
-    {
-      width: 35%;
-      background-color: rgb(196, 202, 255);
-    }
-    .right{
-      text-align: right;
-    }
-    .pad {
-      padding: 30px;
-    }
-    .space{
-      height: 10px;
-    }
-    .w3-wide {letter-spacing: 10px;}
-    .w3-hover-opacity {cursor: pointer;}
-    .oddRadius{
-        border: 2px solid red;
-        padding: 10px;
-        border-radius: 50px 20px;
-    }
-    .alignMid{
-      vertical-align: middle;
-    }
-  
-    .block{
-      display: inline-block;
-    }
-  
-   .tableDescription{
-    vertical-align: top;
-    text-align: left;
-  }
-  .tableSocial{
-    /*vertical-align: middle;*/
-    text-align: center;
-    margin-left: auto;
-      margin-right: auto;
-  }
-  
-  .memberMargins{
-    margin: 15px;
-    margin: 15px;
-  }
-  
-  .memberWidth{
-    width: 970px;
-  }
-  
-  @media (max-width: 990px) {
-    .memberWidth{
-    width: 100%;
-  }
-  }
-  
-  .memberCenter{
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .memberImageWidth{
-    width:150px;
-  }
-  
-  
-  
-  .dropdownClose {
-      max-height: 0;
-      transition: max-height 0.35s ease-out;
-      overflow: hidden;
-  }
-  
-  .dropdownOpen {
-      max-height: 300px;
-      transition: max-height 0.40s ease-in;
-      overflow: hidden;
-  }
-  
-  
-  
-  
-  table {
-    border-collapse: collapse;
-  }
-  
-  
-    .b{
-      border-color: black;
-      border-width: 0px;
-      border-style: solid;
-    }
-    .ba{
-      background-color: rgb(255, 182, 182);
-    }
-    .bb{
-      background-color: rgb(253, 183, 155);
-    }
-    .bc{
-      background-color: rgb(181, 241, 181);
-    }
-    .bd{
-      background-color: rgb(199, 181, 241);
-    }
-    .be{
-      background-color: rgb(241, 240, 181);
-    }
-    .bf{
-      background-color: rgb(209, 221, 101);
-    }
+        body,
+        html {
+            height: 100%;
+        }
+
+        /* Create a Parallax Effect */
+        #bgimg-1 {
+            position: relative;
+            background-attachment: fixed;
+            background-position: center 0px;
+            background-repeat: repeat;
+            background-size: cover;
+            background-size: 100px;
+            /*background-size: contain;*/
+        }
+
+        /* First image (Logo. Full height) */
+        #bgimg-1 {
+            background-image: url("/images/dots.png");
+            min-height: 100%;
+        }
+
+        .quoteHeight {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .c {
+            background-color: rgb(203, 241, 241);
+        }
+
+        .displayBlockSmall {
+            display: none;
+        }
+
+        .displayBlockLarge {
+            display: inherit;
+        }
+
+        .tableSocialSmallWidth {
+            width: 150px;
+        }
+
+        @media (max-width: 650px) {
+            .c {
+                background-color: rgb(180, 158, 202);
+            }
+
+            .displayBlockSmall {
+                display: inherit;
+            }
+
+            .displayBlockLarge {
+                display: none;
+            }
+
+            .tableSocialSmallWidth {
+                width: 1px;
+            }
+        }
+
+        .center {
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .contain {
+            width: 35%;
+            background-color: rgb(196, 202, 255);
+        }
+
+        .right {
+            text-align: right;
+        }
+
+        .pad {
+            padding: 30px;
+        }
+
+        .space {
+            height: 10px;
+        }
+
+        .w3-wide {
+            letter-spacing: 10px;
+        }
+
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
+
+        .oddRadius {
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 50px 20px;
+        }
+
+        .alignMid {
+            vertical-align: middle;
+        }
+
+        .block {
+            display: inline-block;
+        }
+
+        .tableDescription {
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .tableSocial {
+            /*vertical-align: middle;*/
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memberMargins {
+            margin: 15px 15px 0 15px;
+        }
+
+        .memberWidth {
+            width: 970px;
+        }
+
+        @media (max-width: 990px) {
+            .memberWidth {
+                width: 100%;
+            }
+        }
+
+        .memberCenter {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .memberImageWidth {
+            width: 150px;
+        }
+
+        .nameSpacerBar {
+            width: 60%;
+            height: 2px;
+            background-color: rgb(95, 95, 95);
+        }
+
+
+
+        .dropdownClose {
+            max-height: 0;
+            transition: max-height 0.35s ease-out;
+            overflow: hidden;
+        }
+
+        .dropdownOpen {
+            max-height: 300px;
+            transition: max-height 0.40s ease-in;
+            overflow: hidden;
+        }
+
+        .arrowHover:hover {
+            cursor: pointer;
+        }
+
+        .arrowTab {
+            text-align: center;
+            background-color: rgb(223, 224, 235);
+            border-bottom-left-radius: 13px;
+            border-bottom-right-radius: 13px;
+        }
+
+        .arrowTab h2 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .arrowTabWidth {
+            width: 80px;
+        }
+
+        .descriptionPadding {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .memberColor {
+            background-color: rgb(209, 233, 255);
+            border-radius: 3px;
+            border-top-left-radius: 80px
+        }
+
+
+
+        table {
+            border-collapse: collapse;
+        }
+
+/*
+        .b {
+            border-color: black;
+            border-width: 0px;
+            border-style: solid;
+        }
+
+        .ba {
+            background-color: rgb(255, 182, 182);
+        }
+
+        .bb {
+            background-color: rgb(253, 183, 155);
+        }
+
+        .bc {
+            background-color: rgb(181, 241, 181);
+        }
+
+        .bd {
+            background-color: rgb(199, 181, 241);
+        }
+
+        .be {
+            background-color: rgb(241, 240, 181);
+        }
+
+        .bf {
+            background-color: rgb(209, 221, 101);
+        }*/
     </style>
-    
-    <script> 
-      $(function(){
-        $("#header").load("/jquery/header.html");
-        $("#footer").load("/jquery/footer.html");
-        $('.aniview').AniView();
-      });
+
+    <script>
+        $(function () {
+            $("#header").load("/jquery/header.html");
+            $("#footer").load("/jquery/footer.html");
+            $('.aniview').AniView();
+        });
     </script>
-    
-    
-  </head>
-    
-  <body class="light-blue-background">
-    
+
+
+</head>
+
+<body class="light-blue-background">
+
     <!-- Navbar (sit on top) -->
     <div id="header"></div>
-    
+
     <!--https://www.youtube.com/watch?v=YCI8uqePkrc -->
     <!--https://www.youtube.com/watch?v=VfmTi4k51aQ -->
     <!--https://www.theinformation.com/about -->
-    
-    
+
+
     <div id="bgimg-1" class="c">
-    <div class="w3-center contain w3-display-middle pad">
-      <b>"Everyone knows there's only 2 ways to create a company name. It's either your last name or a couple of words you like the sound of."</b>
-      <br>
-      <div class="space"></div>
-      <div class="right">
-        <i>-Mr Health-Potion </i>
-      </div>
+        <div class="w3-center contain w3-display-middle pad">
+            <b>"Everyone knows there's only 2 ways to create a company name. It's either your last name or a couple of
+                words you like the sound of."</b>
+            <br>
+            <div class="space"></div>
+            <div class="right">
+                <i>-Mr Health-Potion </i>
+            </div>
+        </div>
     </div>
-    </div>
-    
-    
+
+
     <br>
-    
+
     <!--App panels-->
     <div class="w3-container2 displayBlockSmall">
-      <div class="w3-panel w3-pale-red w3-leftbar w3-border-green oddRadius">
-        <h1 class="font-headings"><b>I show on iOS</b></h1>
-      </div>
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-green oddRadius">
+            <h1 class="font-headings"><b>I show on iOS</b></h1>
+        </div>
     </div>
-    
+
     <div class="w3-container2 displayBlockLarge">
-      <div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
-        <h1 class="font-headings"><b>I show on PC</b></h1>
-      </div>
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
+            <h1 class="font-headings"><b>I show on PC</b></h1>
+        </div>
     </div>
-    
+
     <br>
-    
-  
-  <!---->
-  <!---->
-<br><br>
-  
-  
-  
-  
-  <div class="memberMargins">
-    <div class="b ba memberCenter memberWidth memberMargins">
-      <div class="alignMid">
-          <table  style="width:100%;">
-              <tr>
-                <td class="b memberImageWidth">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Creative-Tail-People-man-2.svg" draggable="false" class="memberImageWidth dontPeek">
-                </td>
-                <td style="width:15px;" class="b">
-                  &nbsp;
-                </td>
-                <td class="b">
-                    Alex Wagner
-                    <br>
-                    <b>Programmer</b>
-                </td>
-                <td class="b" style="width:60px">
-                  <div style="padding-right:25px; text-align:right">
-                      <h2><i id="mem1arrow" onclick="drop('mem1')" class="fas fa-angle-down"></i></h2>
-  
-                  </div>
-                </td>
-              </tr>
-            </table>
-      </div>
-  
-      <!--animate-->
-      <div id="mem1" class="dropdownClose">
-          <div class="space b be"></div>
-  
-          <table class="b bb">
-            <tr>
-              <td class="b bc tableSocial tableSocialSmallWidth">
-                  <div style="width:1000px;" class="displayBlockLarge ">
-                      Twitter <br>
-                      instragrm <br>
-                      soundcloud
-                  </div>
-              </td>
-              <td class="b bd tableDescription">
-                  This is my description. here goes the words. This is my description. here goes the words.
-              </td>
-            </tr>
-            
-            <tr>
-              <td colspan="2" class="b bc">
-                <div style="width:1000px;" class="displayBlockSmall b tableSocial">
-                    Twitter <br>
-                    instragrm <br>
-                    soundcloud
-                </div>
-              </td>
-            </tr>
-          </table>
-      </div>
-      <!--animate-->
-      
+
+
+    <!---->
+    <!---->
+    <br><br>
+
+
+
+
+    <div class="memberMargins">
+        <div class="b ba memberCenter memberWidth memberMargins memberColor">
+            <div class="alignMid">
+                <table style="width:100%;">
+                    <tr>
+                        <td class="b memberImageWidth">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Creative-Tail-People-man-2.svg"
+                                draggable="false" class="memberImageWidth dontPeek">
+                        </td>
+                        <td style="width:15px;" class="b">
+                            &nbsp;
+                        </td>
+                        <td class="b">
+                            Alex Wagner
+                            <div class="nameSpacerBar"></div>
+                            <b>Owner / Programmer</b>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!--dropdown description-->
+            <div id="mem1" class="dropdownClose">
+                <div class="space b be"></div>
+
+                <table class="b bb">
+                    <tr>
+                        <td class="b bc tableSocial tableSocialSmallWidth">
+                            <div style="width:1000px;" class="displayBlockLarge ">
+                                Twitter <br>
+                                instragrm <br>
+                                soundcloud
+                            </div>
+                        </td>
+                        <td class="b bd tableDescription">
+                            <div class="descriptionPadding">
+                                <b>Age: </b> 21
+                                <br>
+                                <b>Least Favorite Food: </b> Carrots
+                                <br><br>
+
+                                This is my description. here goes the words. This is my description. here goes the
+                                words.
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" class="b bc">
+                            <div style="width:1000px;" class="displayBlockSmall b tableSocial">
+                                Twitter <br>
+                                instragrm <br>
+                                soundcloud
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--dropdown description-->
+        </div>
     </div>
-  </div>
-  
-  
-  <script>
-      function drop(ID) {
-        var x = document.getElementById(ID);
-        var arrow = document.getElementById(ID + "arrow");
-        if (x.className.indexOf("dropdownClose") == -1) 
-        {
-          //close
-          x.className = x.className.replace("dropdownOpen", "dropdownClose");
-          arrow.className = arrow.className.replace("up", "down");
-        } 
-        else 
-        { 
-          //open
-          x.className = x.className.replace("dropdownClose", "dropdownOpen");
-          arrow.className = arrow.className.replace("down", "up");
+
+    <div class="alignMid memberCenter arrowTabWidth">
+        <div class="b">
+            <div onclick="drop('mem1')" class="arrowHover arrowTab">
+                <h2><i id="mem1arrow" class="fas fa-angle-down"></i></h2>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function drop(ID) {
+            var x = document.getElementById(ID);
+            var arrow = document.getElementById(ID + "arrow");
+            if (x.className.indexOf("dropdownClose") == -1) {
+                //close
+                x.className = x.className.replace("dropdownOpen", "dropdownClose");
+                arrow.className = arrow.className.replace("up", "down");
+            }
+            else {
+                //open
+                x.className = x.className.replace("dropdownClose", "dropdownOpen");
+                arrow.className = arrow.className.replace("down", "up");
+            }
         }
-      }
-      </script>
-    
-    
-    
+    </script>
+
+
+
     <br>
-    <h1><font color="cc0000">Health Potion Studios</font></h1>
+    <h1>
+        <font color="cc0000">Health Potion Studios</font>
+    </h1>
     <p><b>Heavy</b> development coming maybe soon.</p>
-    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working........" style="width:200px;height:auto;"><br>
-    
-    
-    
-    
-    
-    
-    
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif"
+        alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif"
+        alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif"
+        alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif"
+        alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif"
+        alt="Working........" style="width:200px;height:auto;"><br>
+
+
+
+
+
+
+
     <!--FOOTER-->
     <div id="footer"></div>
-    
-    
-    </body>
-    
-    
-    
-    
-    
-    <script>
-    </script>
-    
-    </html>
+
+
+</body>
+
+
+
+
+
+<script>
+</script>
+
+</html>
