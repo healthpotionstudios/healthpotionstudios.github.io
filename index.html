@@ -22,125 +22,120 @@
 <script src="https://unpkg.com/jquery-aniview/dist/jquery.aniview.js"></script>
 
 <head>
-<style>
+    <style>
+        body,
+        html {
+            height: 100%;
+            color: #000;
+        }
 
-body, html {
-    height: 100%;
-    color: #000;
-}
+        /* Create a Parallax Effect */
+        #bgimg-1 {
+            background-attachment: fixed;
+            background-position: center 0px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /*background-size: contain;*/
+            background-color: #000;
+        }
 
-/* Create a Parallax Effect */
-#bgimg-1 {
-    background-attachment: fixed;
-    background-position: center 0px;
-    background-repeat: no-repeat;
-    background-size: cover;
-	/*background-size: contain;*/
-	background-color:#000;
-}
+        /* First image (Logo. Full height) */
+        #bgimg-1 {
+            background-image: url("/images/large_logo.png");
+            min-height: 100%;
+        }
 
-/* First image (Logo. Full height) */
-#bgimg-1 {
-    background-image: url("/images/large_logo.png");
-    min-height: 100%;
-}
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1200px) {
+            #bgimg-1 {
+                background-attachment: scroll;
+                background-size: cover;
+                /*min-height: 400px;*/
+            }
+        }
 
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1200px) {
-    #bgimg-1{
-        background-attachment: scroll;
-		background-size: cover;
-        /*min-height: 400px;*/
-    }
-}
+        .w3-wide {
+            letter-spacing: 10px;
+        }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
 
-.oddRadius{
-    border: 2px solid red;
-    padding: 10px;
-    border-radius: 50px 20px;
-}
+        .oddRadius {
+            border: 2px solid red;
+            padding: 10px;
+            border-radius: 50px 20px;
+        }
+    </style>
 
-</style>
-
-<script> 
-  $(function(){
-    $("#header").load("/jquery/header.html");
-    $("#footer").load("/jquery/footer.html");
-    $('.aniview').AniView();
-  });
-</script>
+    <script>
+        $(function () {
+            $("#header").load("/jquery/header.html");
+            $("#footer").load("/jquery/footer.html");
+            $('.aniview').AniView();
+        });
+    </script>
 
 
 </head>
 
 <body class="light-blue-background">
 
-<!-- Navbar (sit on top) -->
-<div id="header">
-	<h1 style="font-size:1px;">Health Potion Studios</h1>	
-</div>
+    <!-- Navbar (sit on top) -->
+    <div id="header">
+        <h1 style="font-size:1px;">Health Potion Studios</h1>
+    </div>
 
 
 
 
 
-<!-- First Parallax Image with Logo Text -->
-<div id="bgimg-1" class="w3-display-container">
-</div>
+    <!-- First Parallax Image with Logo Text -->
+    <div id="bgimg-1" class="w3-display-container">
+    </div>
 
 
-<br>
+    <br>
 
-<!--App panels-->
-<div id="apps" class="w3-container2">
-	<div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
-	  <h1 class="font-headings"><b>Try our Apps</b></h1>
-	</div>
-</div>
+    <!--App panels-->
+    <div id="apps" class="w3-container2">
+        <div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
+            <h1 class="font-headings"><b>Try our Apps</b></h1>
+        </div>
+    </div>
 
-<br>
+    <br>
 
-<div class="w3-row-padding w3-center w3-margin-top">
+    <div class="w3-row-padding w3-center w3-margin-top">
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed0" data-av-animation="fadeInRight">
-  <h2 class="font-apps">Danger Mountain</h2>
-  <a href="/apps/dm.html">
-    <script>
-        document.write(isNotMobile('<img src="/images/apps/dm/appIcon_dm.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-                    '<img src="/images/apps/dm/appIcon_dm.png" style="width:85%" draggable="false" class="dontPeek">'));	
-    </script>
-  </a>
-  </div>
-</div>
+        <div class="w3-third">
+            <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed0" data-av-animation="fadeInRight">
+                <h2 class="font-apps">Danger Mountain</h2>
+                <a href="/apps/dm.html">
+                    <img src="/images/apps/dm/appIcon_dm.png" draggable="false" class="appIcon dontPeek">
+                </a>
+            </div>
+        </div>
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed1" data-av-animation="fadeInRight">
-  <h2 class="font-apps">Celestial Patterns</h2>
-  <a href="/apps/cp.html">
-  <script>
-  document.write(isNotMobile('<img src="/images/apps/cp/appIcon_cp.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-						     '<img src="/images/apps/cp/appIcon_cp.png" style="width:85%" draggable="false" class="dontPeek">'));	
-  </script>
-  </a>
-  </div>
-</div>
+        <div class="w3-third">
+            <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed1" data-av-animation="fadeInRight">
+                <h2 class="font-apps">Celestial Patterns</h2>
+                <a href="/apps/cp.html">
+                    <img src="/images/apps/cp/appIcon_cp.png" draggable="false" class="appIcon dontPeek">
+                </a>
+            </div>
+        </div>
 
-<div class="w3-third">
-  <div class="w3-card w3-container w3-padding-32-bottom w3-red-background aniview aniSpeed2" data-av-animation="fadeInRight">
-  <h2 class="font-apps">Day & Night</h2>
-  <a href="/apps/dn.html">
-  <script>
-    document.write(isNotMobile('<img src="/images/apps/dn/appIcon_dn.png" onmouseover="mouseOverZoomOn(this)" onmouseout="mouseOverZoomOff(this)"  style="width:85%" draggable="false">',
-                   '<img src="/images/apps/dn/appIcon_dn.png" style="width:85%" draggable="false" class="dontPeek">'));	
-  </script>
-  </a>
-  </div>
-</div>
-</div>
+        <div class="w3-third">
+            <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed2" data-av-animation="fadeInRight">
+                <h2 class="font-apps">Day & Night</h2>
+                <a href="/apps/dn.html">
+                    <img src="/images/apps/dn/appIcon_dn.png" draggable="false" class="appIcon dontPeek">
+                </a>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -148,20 +143,22 @@ body, html {
 
 
 
-<h1><font color="cc0000">Health Potion Studios</font></h1>
-<p><b>Heavy</b> development coming maybe soon.</p>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
-<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working........" style="width:200px;height:auto;"><br>
+    <h1>
+        <font color="cc0000">Health Potion Studios</font>
+    </h1>
+    <p><b>Heavy</b> development coming maybe soon.</p>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working...." style="width:200px;height:auto;"><br>
+    <img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-transparent-background-4.gif" alt="Working........" style="width:200px;height:auto;"><br>
 
 
 
 
 
-<!--FOOTER-->
-<div id="footer"></div>
+    <!--FOOTER-->
+    <div id="footer"></div>
 
 
 </body>
@@ -172,32 +169,29 @@ body, html {
 
 <script>
 
-window.onload = resizeBackground;
-window.onresize = resizeBackground;
+    window.onload = resizeBackground;
+    window.onresize = resizeBackground;
 
-var ratio = 0.5563;
+    var ratio = 0.5563;
 
-  function resizeBackground() { 
-	var method = "cover";
-	ratio = (window.innerHeight / window.innerWidth);
-	
-	var back = document.getElementById("bgimg-1");
-	if (isNotMobileBool())
-	{
-		if (ratio > 0.5563)
-		{
-			method = "cover";
-			back.style.backgroundSize = "cover";
-		}
-		else
-		{
-			method = "contain";
-			back.style.backgroundSize = "contain";
-		}
-	}
-	}
+    function resizeBackground() {
+        var method = "cover";
+        ratio = (window.innerHeight / window.innerWidth);
 
- 
+        var back = document.getElementById("bgimg-1");
+        if (isNotMobileBool()) {
+            if (ratio > 0.5563) {
+                method = "cover";
+                back.style.backgroundSize = "cover";
+            }
+            else {
+                method = "contain";
+                back.style.backgroundSize = "contain";
+            }
+        }
+    }
+
+
 </script>
 
 </html>

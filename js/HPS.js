@@ -20,14 +20,6 @@ function isNotMobileBool() {
 }
 
 
-function mouseOverZoomOn(x) {
-    x.style.width = "88%";
-}
-
-function mouseOverZoomOff(x) {
-    x.style.width = "85%";
-}
-
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction(ID) {
     var x = document.getElementById(ID);
