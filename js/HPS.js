@@ -67,3 +67,50 @@ function specialCode()
 		document.write('<br><p class="h3fontSize">Since it is December use code: <b>itsChristmas</b> for some free coins!</p>');
 	}
 }
+
+
+function setAge(name)
+{
+    var birth_month = 0;
+    var birth_day = 0;
+    var birth_year = 0;
+    if (name == "alex")
+    {
+        birth_month = 4;
+        birth_day = 6;
+        birth_year = 1997;
+    }
+    if (name == "pan")
+    {
+        birth_month = 2;
+        birth_day = 22;
+        birth_year = 1996;
+    }
+    if (name == "holden")
+    {
+        birth_month = 10;
+        birth_day = 8;
+        birth_year = 1997;
+    }
+    var today_date = new Date();
+    var today_year = today_date.getFullYear();
+    var today_month = today_date.getMonth();
+    var today_day = today_date.getDate();
+    var age = today_year - birth_year;
+
+    if ( today_month < (birth_month - 1))
+    {
+        age--;
+    }
+    if (((birth_month - 1) == today_month) && (today_day < birth_day))
+    {
+        age--;
+    }
+    var result = age.toString();
+    if (((birth_month - 1) == today_month) && (today_day == birth_day))
+    {
+        result += "   <span class='birthday'>Happy Birthday!</span>"
+    }
+
+    document.write(result);
+}
