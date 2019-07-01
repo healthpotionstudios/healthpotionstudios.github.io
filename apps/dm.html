@@ -27,7 +27,7 @@
   $(function(){
     $("#header").load("/jquery/header.html");
     $("#footer").load("/jquery/footer.html");
-    $("#PrivPolicyText").load("/jquery/privpolicy-admob-gamecenter.html");
+    $("#PrivPolicyText").load("/jquery/privpolicy-unityAds-gamecenter.html");
     $('.aniview').AniView();
   });
   fillAppNameDelay("Danger Mountain");
@@ -41,6 +41,7 @@
 <!-- Navbar (sit on top) -->
 <div id="header"></div>
 
+<div class="pageWrapper">
 
 <br>
 
@@ -189,14 +190,14 @@
 <div class="row-spacer-TB borderTest">&nbsp</div>
 
 
-
+</div>
 
 <!--FOOTER-->
 <div id="footer"></div>
 
 
 
-<!--slieshow-->
+<!--slideshow-->
 <script>
     var slideIndex = 1;
     showDivs(slideIndex);
