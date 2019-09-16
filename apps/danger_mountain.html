@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/css/HPS.css">
 <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 <script type="text/javascript" src="/js/HPS.js"></script>
@@ -27,10 +28,10 @@
   $(function(){
     $("#header").load("/jquery/header.html");
     $("#footer").load("/jquery/footer.html");
-    $("#PrivPolicyText").load("/jquery/privpolicy-gamecenter.html");
+    $("#PrivPolicyText").load("/jquery/privpolicy-unityAds-gamecenter.html");
     $('.aniview').AniView();
   });
-  fillAppNameDelay("Day & Night");
+  fillAppNameDelay("Danger Mountain");
 </script>
 
 
@@ -39,8 +40,9 @@
 <body class="light-blue-background">
 
 <!-- Navbar (sit on top) -->
-<div id="header"></div>
-
+<header>
+        <div id="header"></div>
+    </header>
 
 <div class="pageWrapper">
 
@@ -49,7 +51,7 @@
 
 <div class="w3-container2 borderTest">
 	<div class="w3-center appHeaderPadding">
-	  <h1 class="font-headings appHeaderFontSize"><b>Day & Night</b></h1>
+	  <h1 class="font-headings appHeaderFontSize"><b>Danger Mountain</b></h1>
 	</div>
 </div>
 
@@ -64,19 +66,15 @@
     <div class="appIcon-third borderTest">
     
         <div class="w3-container">
-            <img src="/images/apps/dn/appIcon_dn.png" style="width:100%" draggable="false" class="dontPeek">
+            <img src="/images/apps/dm/appIcon_dm.png" style="width:100%" draggable="false" class="dontPeek">
         </div>
 
     </div>
 
     <div class="w3-twothird borderTest">
         <div class="w3-container">
-        <p class="h3fontSize">Imagine running forever. Imagine running through the day and the night. Imagine spikes.<br>
-            Now stop imagining because Day & Night does all of that. 
-            <br><br>
-            With one tap you can seamlessly flip between day and night in order to dodge incoming spikes. 
-            <br>
-            How far can you run?</p>
+        <p class="h3fontSize">Test your skills on this fast-paced arcade game.<br>Climb forever on Danger Mountain!<br>Dodge falling rocks and collect coins all while racing for the high score.<br>
+            Challenge your Friends! Surpass your Enemies!</p>
         </div>
     </div>
 
@@ -92,9 +90,26 @@
                 <h2 class="font-headings">Download Now!</h2>
         </div>
         <div class=" w3-container">
-            <a href="https://itunes.apple.com/us/app/day-night/id1358139198?ls=1&mt=8"><img src="/images/download_logo.png" style="height:75px" draggable="false"></a>
+            <a href="https://itunes.apple.com/us/app/danger-mountain/id1190453389?mt=8"><img src="/images/download_logo.png" style="height:75px" draggable="false"></a>
             <br>
-            <div><b>Released: March 2018</b></div>
+            <div><b>Released: May 2017</b></div>
+        </div>
+        <div class="row-spacer-TB borderTest">&nbsp</div>
+    </div>
+</div>
+	
+<!--Special codes-->
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-5 aniview aniSpeed2" data-av-animation="fadeInRight">
+    <div class="borderTest">
+        <div class="row-spacer-TnoB borderTest">
+                <h2 class="font-headings" style="margin-bottom: 0">Special Codes!</h2>
+        </div>
+        <div class=" w3-container">
+		<div><b>Settings > Passcodes</b></div>
+			<p class="h3fontSize">Enter code: <b>StaterPack</b> for some free powerups!</p>
+		<script>
+			specialCode();
+		</script>
         </div>
         <div class="row-spacer-TB borderTest">&nbsp</div>
     </div>
@@ -102,7 +117,7 @@
 
 
 <!--Trailer-->
-<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-5 aniview aniSpeed2" data-av-animation="fadeInRight">
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 aniview aniSpeed3" data-av-animation="fadeInLeft">
     <div class="row-spacer-TB borderTest">
         <h2 class="font-headings">Watch the trailer!</h2>
     </div>
@@ -110,7 +125,7 @@
         <div class="videoPaddingPort">
             <div class=" w3-container video-container">
                 <!--<object data="https://www.youtube.com/embed/KjcL-UjnAro" width="853" height="480"></object>-->
-		    <iframe width="560" height="315" src="https://www.youtube.com/embed/yYYZe5i1NkU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		    <iframe width="560" height="315" src="https://www.youtube.com/embed/KjcL-UjnAro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -119,7 +134,7 @@
 
 
 <!--Slideshow-->
-<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-6 roundedBot aniview aniSpeed3" data-av-animation="fadeInLeft">
+<div class="w3-row-padding w3-center borderTest row-margins-LR theme-blue-5 roundedBot aniview aniSpeed4" data-av-animation="fadeInRight">
     <div class="borderTest">
         <div class="row-spacer-TB borderTest">
                 <h2 class="font-headings">Screenshots!</h2>
@@ -127,9 +142,11 @@
         <div class=" w3-container">
             <div class="w3-display-container">
                 <div class="w3-content">
-                    <img class="mySlides slideshowImgLand" src="/images/apps/dn/1.png">
-                    <img class="mySlides slideshowImgLand" src="/images/apps/dn/2.png">
-                    <img class="mySlides slideshowImgLand" src="/images/apps/dn/3.png">
+                    <img class="mySlides slideshowImgPort" src="/images/apps/dm/1.png">
+                    <img class="mySlides slideshowImgPort" src="/images/apps/dm/2.png">
+                    <img class="mySlides slideshowImgPort" src="/images/apps/dm/3.png">
+                    <img class="mySlides slideshowImgPort" src="/images/apps/dm/4.png">
+                    <img class="mySlides slideshowImgPort" src="/images/apps/dm/5.png">
                 </div>
             </div>
         </div>
@@ -138,6 +155,8 @@
                 <button class="w3-button slideNumber" onclick="currentDiv(1)">1</button> 
                 <button class="w3-button slideNumber" onclick="currentDiv(2)">2</button> 
                 <button class="w3-button slideNumber" onclick="currentDiv(3)">3</button> 
+                <button class="w3-button slideNumber" onclick="currentDiv(4)">4</button>
+                <button class="w3-button slideNumber" onclick="currentDiv(5)">5</button>  
             </div>
         </div>
         <div class="row-spacer-TB borderTest">&nbsp</div>
@@ -153,7 +172,7 @@
 
 
 <!--privacy policy-->
-<div class="w3-row-padding borderTest row-margins-LR theme-blue-5 roundedTop roundedBot aniview" data-av-animation="fadeInUp">
+<div class="w3-row-padding borderTest row-margins-LR theme-blue-6 roundedTop roundedBot aniview" data-av-animation="fadeInUp">
     <div class="row-spacer-TB borderTest">
         <h2 class="font-headings w3-center">Privacy Policy</h2>
     </div>
@@ -176,13 +195,12 @@
 
 </div>
 
-
 <!--FOOTER-->
 <div id="footer"></div>
 
 
 
-<!--slieshow-->
+<!--slideshow-->
 <script>
     var slideIndex = 1;
     showDivs(slideIndex);

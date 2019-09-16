@@ -1,4 +1,4 @@
-<!-- Copyright Health Potion Studios 2018 -->
+<!-- Copyright Health Potion Studios 2018-2019 -->
 <!DOCTYPE html>
 <html>
 <title>Health Potion Studios</title>
@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="/css/HPS.css">
 <link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Rajdhani:600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
 <script type="text/javascript" src="/js/HPS.js"></script>
@@ -29,30 +31,7 @@
             color: #000;
         }
 
-        /* Create a Parallax Effect */
-        #bgimg-1 {
-            background-attachment: fixed;
-            background-position: center 0px;
-            background-repeat: no-repeat;
-            background-size: cover;
-            /*background-size: contain;*/
-            background-color: #000;
-        }
 
-        /* First image (Logo. Full height) */
-        #bgimg-1 {
-            background-image: url("/images/large_logo.png");
-            min-height: 100%;
-        }
-
-        /* Turn off parallax scrolling for tablets and phones */
-        @media only screen and (max-device-width: 1200px) {
-            #bgimg-1 {
-                background-attachment: scroll;
-                background-size: cover;
-                /*min-height: 400px;*/
-            }
-        }
 
         .w3-wide {
             letter-spacing: 10px;
@@ -77,30 +56,56 @@
 <body class="light-blue-background">
 
     <!-- Navbar (sit on top) -->
-    <div id="header">
-        <h1 style="font-size:1px;">Health Potion Studios</h1>
-    </div>
-
+    <header>
+        <div id="header">
+            <h1 style="font-size:1px;">Health Potion Studios</h1>
+        </div>
+    </header>
 
 
 
 
     <!-- First Parallax Image with Logo Text -->
-    <div id="bgimg-1" class="w3-display-container">
-    </div>
+    <!--<div class="mainPageLogoBackground w3-display-container">
+    </div>-->
+
+
 
     <div class="pageWrapper">
+
+
+
+            <div class="hero">
+                    <div class="hero-image">
+                        <img src="/images/logo.png">
+                    </div>
+                    <div class="hero-text-area">
+                        <div class="hero-text-1">
+                            "Everyone knows there's only 2 ways to create a company name. It's either your last name or a couple of
+                            words you like the sound of."</b>
+            
+                            <div class="space"></div>
+                            <div class="right">
+                                <i>-Mr Health-Potion </i>
+                            </div>
+                        </div>
+                        <div class="hero-text-2">
+                            Haha, all jokes aside, Health Potion Studios is a small game development company. We have a few apps for iOS and are working on games for the PC.
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
         <div id="apps"></div>
         <br>
 
 
 
-
-
-        <!--App panels NEW WIDTH-->
         <div class="w3-container2">
-            <div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
+            <div class="w3-panel w3-pale-red oddRadius2">
                 <div class="centerText">
                     <h1 class="font-headings"><b>Try our Apps</b></h1>
                 </div>
@@ -113,83 +118,27 @@
 
             <div class="card w3-red-background">
                 <h2 class="font-apps">Danger Mountain</h2>
-                <a href="/apps/dm.html">
+                <a href="/apps/danger_mountain.html">
                     <img class="appIcon dontPeek" src="/images/apps/dm/appIcon_dm.png" draggable="false">
                 </a>
             </div>
             <div class="card w3-red-background">
                 <h2 class="font-apps">Celestial Patterns</h2>
-                <a href="/apps/cp.html">
+                <a href="/apps/celestial_patterns.html">
                     <img class="appIcon dontPeek" src="/images/apps/cp/appIcon_cp.png" draggable="false">
                 </a>
             </div>
             <div class="card w3-red-background">
                 <h2 class="font-apps">Day & Night</h2>
-                <a href="/apps/dn.html">
+                <a href="/apps/day_night.html">
                     <img class="appIcon dontPeek" src="/images/apps/dn/appIcon_dn.png" draggable="false">
                 </a>
             </div>
-            
-
 
         </div>
 
 
-
-
-
-
-
-
-
-        <!--
-        <div class="w3-container2">
-            <div class="w3-panel w3-pale-red w3-leftbar w3-border-red oddRadius">
-                <div class="centerText">
-                    <h1 class="font-headings"><b>Try our Apps</b></h1>
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="w3-row-padding w3-center w3-margin-top">
-
-            <div class="w3-third">
-                <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed0" data-av-animation="fadeInRight">
-                    <h2 class="font-apps">Danger Mountain</h2>
-                    <a href="/apps/dm.html">
-                        <img src="/images/apps/dm/appIcon_dm.png" draggable="false" class="appIcon dontPeek">
-                    </a>
-                </div>
-            </div>
-
-            <div class="w3-third">
-                <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed1" data-av-animation="fadeInRight">
-                    <h2 class="font-apps">Celestial Patterns</h2>
-                    <a href="/apps/cp.html">
-                        <img src="/images/apps/cp/appIcon_cp.png" draggable="false" class="appIcon dontPeek">
-                    </a>
-                </div>
-            </div>
-
-            <div class="w3-third">
-                <div class="w3-card w3-container w3-red-background app-card aniview aniSpeed2" data-av-animation="fadeInRight">
-                    <h2 class="font-apps">Day & Night</h2>
-                    <a href="/apps/dn.html">
-                        <img src="/images/apps/dn/appIcon_dn.png" draggable="false" class="appIcon dontPeek">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    -->
-
-
-
-
-
-
+        
 
         <h1>
             <font color="cc0000">Health Potion Studios</font>
@@ -214,7 +163,7 @@
 
 
 
-
+<!--
 <script>
 
     window.onload = resizeBackground;
@@ -241,5 +190,6 @@
 
 
 </script>
+-->
 
 </html>

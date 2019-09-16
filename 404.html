@@ -12,123 +12,197 @@
 <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
 <head>
-<style>
+    <style>
+        body,
+        html {
+            height: 100%;
+            color: #000;
+            margin: 0;
+            font: 400 15px/1.8 "Lato", sans-serif;
+            
+        }
 
-body, html {
-    height: 100%;
-    color: #000;
-	margin: 0;
-	font: 400 15px/1.8 "Lato", sans-serif;
-}
+        .wrapper{
+            display: flex !important;
+            justify-content: center;
+        }
 
-.baloo{
-	font-family: 'Baloo', cursive;
-}
+        .baloo {
+            font-family: 'Baloo', cursive;
+        }
 
-.audiowide{
-	font-family: 'Audiowide', cursive;
-}
+        .audiowide {
+            font-family: 'Audiowide', cursive;
+        }
 
-/* Create a Parallax Effect */
-#bgimg-1 {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-	background-color:#000;
-	background-image: url("/images/space background2.png");
-    min-height: 100%;
-}
+        /* Create a Parallax Effect */
+        #bgimg-1 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #000;
+            background-image: url("/images/space background2.png");
+            height: 100%;
+        }
 
-.fixedPlanet {
-    position: fixed;
-    top: 0;
-    right: 0;
-	width: 38%;
-}
-.fixedComp {
-    position: fixed;
-    top: 40%;
-    left: 5%;
-	//max-width: 15px;
-}
+        .fixedPlanet {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 38%;
+            max-width: 400px;
+        }
 
-.caption {
-z-index: 999;
-  position: absolute;
-  left: 0;
-  top: 32%;
-  width: 100%;
-  text-align: center;
-  color: #000;
-}
+        .fixedComp {
+            position: fixed;
+            bottom: 10%;
+            left: 30%;
+        }
 
-.caption span.border {
-  background-color: #111;
-  color: #fff;
-  padding: 18px;
-  //font-size: 25px;
-  letter-spacing: 10px;
-}
+        .caption {
+            z-index: 999;
+            width: 70%;
+            max-width: 700px;
+            align-self: center;
+            text-align: center;
+            padding: 10px;
+            color: #000;
+            background-color: #111;
+        }
 
-.largeText
-{
-	font-size: 48px;
-}
-.subtext
-{
-	 font-size: 25px;
-}
+        .caption span.border {
+            
+            color: #fff;
+            padding: 18px;
+            letter-spacing: 10px;
+        }
 
-.computer {
-  -webkit-animation: spin 2s linear infinite; /* Safari */
-  animation: spin 20s linear infinite;
-  transform-origin: 50% 50%;
-  -webkit-transform-origin: 50% 50%;
-}
+        .largeText {
+            font-size: 48px;
+            
+        }
 
-/* Safari */
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
+        .subtext {
+            font-size: 28px;
+        }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+        @media (max-width: 750px)
+        {
+            .caption
+            {
+                width: 80%;
+            }
+            .largeText
+            {
+                font-size: 32px;
+            }
+            .subtext
+            {
+                font-size: 20px;
+            }
+        }
 
-</style>
+        .computer {
+            -webkit-animation: spin 40s linear infinite;
+            /* Safari */
+            animation: spin 40s linear infinite;
+            transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+        }
+
+        /* Safari */
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fixedUfo {
+            position: fixed;
+            top: 5%;
+            left: 3%;
+        }
+
+        .ufo {
+            transform-origin: 50% 50%;
+            -webkit-transform-origin: 50% 50%;
+            animation: wobble 2s infinite ease-in-out;
+            -webkit-animation: wobble 2s infinite ease-in-out;
+        }
+
+        @-webkit-keyframes wobble  {
+            0%  { 
+                -webkit-transform:  rotate(-14deg); 
+            }
+            50%  { 
+                -webkit-transform:  rotate(-10deg); 
+            }
+            100%  { 
+                -webkit-transform:  rotate(-14deg); 
+            }
+        }
+
+        @keyframes wobble  {
+            0%  { 
+                transform:  rotate(-14deg); 
+            }
+            50%  { 
+                transform:  rotate(-10deg); 
+            }
+            100%  { 
+                transform:  rotate(-14deg); 
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- First Parallax Image with Logo Text -->
-<div id="bgimg-1" class="w3-display-container">
-	<div class="caption">
-	<div class="largeText">
-		<span class="border">
-			<b>
-				The page you are<br>looking for does<br>not exist.
-			</b>
-		</span>
-		</div>
-		<br><br>
-		<div class="subtext baloo">
-		<span class="border">
-			<a href="/index.html">Click here to go back to the main page</a>
-		</span>
-		</div>
-	</div>
-</div>
+    <!-- First Parallax Image with Logo Text -->
+    <div id="bgimg-1" class="wrapper">
+        <div class="caption">
+            <div class="largeText">
+                <span class="border">
+                    <b>
+                        The page you are<br>looking for does<br>not exist.
+                    </b>
+                </span>
+            </div>
+            <br><br>
+            <div class="subtext baloo">
+                <span class="border">
+                    <a href="/index.html">Click here to go back to the Main page</a>
+                </span>
+            </div>
+        </div>
+    </div>
 
-<div class="fixedPlanet">
-<img src="/images/planet.svg">
-</div>
+    <div class="fixedPlanet">
+        <img src="/images/planet.svg">
+    </div>
 
-<div class="computer fixedComp">
-<img src="/images/computer.png" height="180px">
-</div>
+    <div class="computer fixedComp">
+        <img src="/images/computer.png" height="150px">
+    </div>
+
+    <div class="ufo fixedUfo">
+            <img src="/images/ufo.png" height="80px">
+        </div>
 
 
 </body>
