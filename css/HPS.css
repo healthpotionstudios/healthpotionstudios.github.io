@@ -3,6 +3,14 @@
 :root{
     --hexShape: polygon(30px 0%, calc(100% - 30px) 0%, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0% calc(100% - 30px), 0% 30px);
     --hexShapeSmall: polygon(10px 0%, calc(100% - 10px) 0%, 100% 10px, 100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px), 0% 10px);
+    
+    --footerHeight: 150px;
+    /*footer height + potion image*/
+    --footerHeightMax: calc(var(--footerHeight) + 150px);
+}
+
+body, html{
+    height: 100%;
 }
 
 
@@ -409,6 +417,18 @@
       max-width: 1400px; 
       border-style: solid;
       border-width: 0px;
+      /*footer stuff*/
+      min-height: 100%;
+      margin-bottom: calc(0px -  var(--footerHeightMax));
+  }
+
+  .pageWrapper:after {
+    content: "";
+    display: block;
+  }
+
+  footer, .pageWrapper:after {
+    height: var(--footerHeightMax); 
   }
 
 
@@ -421,6 +441,7 @@
 .centerText {
     text-align: center;
 }
+
 
 
 .footerLogo{
@@ -438,6 +459,121 @@
     width:90px;
     transform: translate(33.5%, 13%);
 }
+
+
+.icon-holder
+{
+    padding-top: 48px;
+    border: 1px solid black;
+}
+
+#copyright
+{
+    margin: 15px 0;
+}
+
+/* Wrapper */
+.icon-button {
+	background-color: #f0ffff;
+	border-radius: 3rem;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 2.0rem;
+	height: 3rem;
+	line-height: 3rem;
+	margin: 0 5px;
+	position: relative;
+	text-align: center;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	width: 3rem;
+  
+}
+
+/* Circle */
+.icon-button span {
+	border-radius: 0;
+	display: block;
+	height: 0;
+	left: 50%;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 0;
+}
+
+.icon-button:hover span {
+	width: 2.7rem;
+	height: 2.7rem;
+	border-radius: 2.7rem;
+	margin: -1.35rem;
+}
+.twitter span {
+	background-color: #4099ff;
+}
+.instagram span {
+	background-color: #F77737;
+}
+.youtube span {
+	background-color: #ff0000;
+}
+.itch span {
+	background-color: #fa5c5c;
+}
+
+/* Icons */
+.icon-button i {
+    font-size: 1.8rem;
+	background: none;
+	color: white;
+	height: 3rem;
+	left: 0;
+	line-height: 3rem;
+	position: absolute;
+	top: 0;
+	-webkit-transition: all 0.3s;
+	   -moz-transition: all 0.3s;
+	     -o-transition: all 0.3s;
+	        transition: all 0.3s;
+	width: 3rem;
+	z-index: 10;
+}
+
+.icon-button .icon-twitter {
+	color: #4099ff;
+}
+.icon-button .icon-instagram {
+	color: #F77737;
+}
+.icon-button .icon-youtube {
+	color: #ff0000;
+}
+.icon-button .icon-itch {
+	color: #fa5c5c;
+}
+
+.icon-button:hover .icon-twitter,
+.icon-button:hover .icon-instagram,
+.icon-button:hover .icon-youtube,
+.icon-button:hover .icon-itch {
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
