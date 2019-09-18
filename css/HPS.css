@@ -844,7 +844,7 @@ body{
 {
     position: absolute;
     top: 26px;
-    left: 4px;
+    left: -4px;
     font-size: 20px;
 }
 
