@@ -815,7 +815,7 @@ body{
     margin-right: auto;
     padding: 0;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
 }
 
 .progressBarWhiteFix
@@ -886,4 +886,9 @@ body{
 {
     font-size: 20px;
     margin-top: 17px;
+}
+
+.QAColor {
+    background-color: rgb(209, 233, 255);
+    border-radius: 4px;
 }
