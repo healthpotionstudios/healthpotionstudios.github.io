@@ -210,7 +210,6 @@ body, html{
 .aniSpeed0{
     animation-delay: 0s;
     -vendor-animation-delay: 0s;
-    -vendor-animation-delay: 0s;
     -o-animation-delay: 0s;
     -moz-animation-delay: 0s;
     -webkit-animation-delay: 0s;
@@ -226,7 +225,6 @@ body, html{
     animation-delay: .2s;
     -o-animation-delay:      .2s;
     -vendor-animation-delay: .2s;
-    -o-animation-delay:      .2s;
     -moz-animation-delay:    .2s;
     -webkit-animation-delay: .2s;
 }
