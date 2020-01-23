@@ -235,7 +235,7 @@ function initMove(pegNum) {
 
 function checkWin() {
   var didWin = true;
-  if (pegarray[2].length != diskAmount) {
+  if (pegarray[2].length != diskAmount) { //last
     didWin = false;
   }
   return didWin;
