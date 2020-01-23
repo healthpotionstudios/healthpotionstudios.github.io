@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+
+
+</head>
+
+<body style="background: aliceblue">
+
+    <script src="_hanoi.js"></script>
+
+    <p>Drag the slider to change the amount of starting disks.</p>
+
+    <input type="range" min="3" max="10" value="5" class="slider" id="myRange">
+    Disks: <span id="slidervalue"></span>
+    <button onclick="resetgame()" style="margin-left: 15px;">Reset Game!</button>
+
+    <div id="sketch-holder">
+        <!-- Our sketch will go here! -->
+    </div>
+    <p>
+        <input type="checkbox" onchange="setoutline()" id="outline">
+        <label for="outline">Disk Outlines</label>
+    </p>
+    <p>
+        <input type="checkbox" onchange="setdisknumber()" checked="" id="numbers">
+        <label for="numbers">Show Disk Numbers</label>
+    </p>
+    <p>
+        <input type="checkbox" onchange="setmouseoutline()" id="area">
+        <label for="area">Show Click Area</label>
+    </p>
+    <p>
+        <input type="checkbox" onchange="showPegArrays()" id="arrays">
+        <label for="arrays">Show Peg Arrays</label>
+    </p>
+    <p id="a1"></p>
+    <p id="a2"></p>
+    <p id="a3"></p>
+
+
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("slidervalue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+    </script>
+
+
+</body>
+
+</html>
