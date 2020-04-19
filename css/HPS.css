@@ -72,7 +72,7 @@ body, html{
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
-    padding-top: 30px; height: 0; overflow: hidden;
+    padding-top: 0px; height: 0; overflow: hidden;
 }
     
 .video-container iframe,
@@ -715,6 +715,13 @@ header .button:hover
     /*background-image: linear-gradient(rgba(0, 26, 255, 0.027) 80%, rgba(0, 26, 255, 0));*/
 }
 
+.flipHero .hero-image{
+    order: 2;
+}
+.flipHero .hero-text-area{
+    order: 1;
+}
+
 @media (max-width: 700px) {
 .hero{
     padding: 20px 20px;
@@ -776,6 +783,12 @@ header .button:hover
     .hero-text-2
     {
         margin-bottom: 20px;
+    }
+    .flipHero .hero-image{
+        order: 1;
+    }
+    .flipHero .hero-text-area{
+        order: 2;
     }
 }
 
@@ -889,4 +902,33 @@ body{
 .QAColor {
     background-color: rgb(209, 233, 255);
     border-radius: 4px;
+}
+
+
+
+/*
+=============================================================================================
+*/
+
+.cardboardBackground
+{
+    border: 10px solid transparent;
+    
+    border-image: url(/images/ooc/cardboard.png) 20 round;
+    border-image-outset: 9px;
+    background-image: url(/images/ooc/cardboard-fill.png);
+    width: 90%;
+}
+
+.tapeHeader
+{
+    background-image: url(/images/ooc/tape.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.headerMargin
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
