@@ -924,7 +924,12 @@ body{
 {
     background-image: url(/images/ooc/tape.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
+}
+
+h1{
+    
+    font-size: 200% !important;
 }
 
 .headerMargin
