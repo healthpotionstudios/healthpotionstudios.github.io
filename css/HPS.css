@@ -912,19 +912,19 @@ body{
 
 .cardboardBackground
 {
-    border: 10px solid transparent;
-    
-    border-image: url(/images/ooc/cardboard.png) 20 round;
-    border-image-outset: 9px;
-    -webkit-border-image: url(/images/ooc/cardboard.png) 20 round;
-    -webkit-border-image-outset: 9px;
-    background-image: url(/images/ooc/cardboard-fill.png);
+    border: 50px solid transparent;
+    -webkit-border-image: url(/images/ooc/cardboard-AI.png) 50 round;
+    -webkit-border-image-outset: 20px;
+    border-image: url(/images/ooc/cardboard-AI.png) 50 round;
+    border-image-outset: 30px;
+    /*background-image: url(/images/ooc/cardboard-fill.png);*/
+    background-color: #dbac40;
     width: 90%;
 }
 
 .tapeHeader
 {
-    background-image: url(/images/ooc/tape.png);
+    background-image: url(/images/ooc/tape-AI.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
