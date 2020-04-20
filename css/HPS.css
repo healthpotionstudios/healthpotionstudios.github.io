@@ -916,6 +916,8 @@ body{
     
     border-image: url(/images/ooc/cardboard.png) 20 round;
     border-image-outset: 9px;
+    -webkit-border-image: url(/images/ooc/cardboard.png) 20 round;
+    -webkit-border-image-outset: 9px;
     background-image: url(/images/ooc/cardboard-fill.png);
     width: 90%;
 }
