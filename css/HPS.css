@@ -914,11 +914,11 @@ body{
 {
     border: 50px solid transparent;
     -webkit-border-image: url(/images/ooc/cardboard-AI.png) 50 round;
-    -webkit-border-image-outset: 20px;
+    /*-webkit-border-image-outset: 20px;*/
     border-image: url(/images/ooc/cardboard-AI.png) 50 round;
-    border-image-outset: 30px;
-    /*background-image: url(/images/ooc/cardboard-fill.png);*/
-    bbackground-color: #dbac40;
+    /*border-image-outset: 30px;*/
+    /*background-image: url(/images/ooc/cardboard-fill.png);
+    background-color: #dbac40;*/
     width: 90%;
 }
 
