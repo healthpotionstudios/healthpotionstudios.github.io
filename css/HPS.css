@@ -523,6 +523,9 @@ body, html{
 .itch span {
 	background-color: #fa5c5c;
 }
+.steam span {
+	background-color: #171A21;
+}
 
 /* Icons */
 .icon-button i {
@@ -554,11 +557,15 @@ body, html{
 .icon-button .icon-itch {
 	color: #fa5c5c;
 }
+.icon-button .icon-steam {
+	color: #171A21;
+}
 
 .icon-button:hover .icon-twitter,
 .icon-button:hover .icon-instagram,
 .icon-button:hover .icon-youtube,
-.icon-button:hover .icon-itch {
+.icon-button:hover .icon-itch,
+.icon-button:hover .icon-steam {
 	color: white;
 }
 
@@ -585,7 +592,7 @@ header
     /*height: 42px;*/
     display: flex;
     display: -webkit-flex;
-    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    font-family: 'ZCOOL QingKe HuangYou', Arial, Helvetica, sans-serif;
     font-size: 1.3rem;
     width: 100%;
 }
@@ -929,6 +936,40 @@ body{
     border: 0px solid black;
 }
 
+.cardboardBackground .hero
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cardboardBackground .hero-image
+{
+    height: auto;
+}
+
+.cardboardBackground img
+{
+    max-height: 300px;
+    max-width: 80%;
+}
+
+.cardboardBackground .hero-text-1
+{
+    margin-bottom: 0;
+}
+
+.cardboardBackground ul
+{
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.cardboardBackground li
+{
+    list-style-type: none;
+}
+
 .cardboardTop
 {
     background: url(/images/ooc/cardboard-AI-largest-top.png);
@@ -953,11 +994,25 @@ body{
     border: 0px solid black;
 }
 
+.firstHeaderFix
+{
+    transform: translateY(-30px);
+}
+
 .tapeHeader
 {
     background-image: url(/images/ooc/tape-AI.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tapeHeaderLarger
+{
+    background-repeat: repeat-y;
+    background-size: 100% 67px;
 }
 
 h1{
@@ -969,4 +1024,50 @@ h1{
 {
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+
+.imgTape
+{
+    background-image: url(/images/ooc/tape-AI-dark.png);
+    background-size: 100% 100%;
+    width: 75px;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(12px);
+    opacity: .75;
+    pointer-events: none;
+}
+
+@media (max-width: 700px) {
+.cardboardBackground {
+    font-size: 0.9em;
+}
+
+.navbreak
+{
+    display: block;
+}
+}
+
+
+.flexWrap
+{
+    display: flex;
+    flex-wrap: wrap;
+    display: -webkit-flex;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+.flexWrap img
+{
+    width: 160px;
+    height: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+    cursor: pointer;
 }
