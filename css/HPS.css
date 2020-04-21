@@ -934,6 +934,7 @@ body{
     width: 90%;
     position: relative;
     border: 0px solid black;
+    z-index: -5;
 }
 
 .cardboardBackground .hero
@@ -980,6 +981,7 @@ body{
     top: -150px;
     left: 0;
     border: 0px solid black;
+    z-index: -5;
 }
 
 .cardboardBottom
@@ -992,6 +994,7 @@ body{
     bottom: -160px;
     left: 0;
     border: 0px solid black;
+    z-index: -5;
 }
 
 .firstHeaderFix
@@ -1004,9 +1007,16 @@ body{
     background-image: url(/images/ooc/tape-AI.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    opacity: .85;
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+}
+
+.tapeHeader h1
+{
+    font-family: 'Source Code Pro', monospace;
+    font-variant: small-caps;
 }
 
 .tapeHeaderLarger
@@ -1018,6 +1028,7 @@ body{
 h1{
     
     font-size: 200% !important;
+    color: black;
 }
 
 .headerMargin
@@ -1070,4 +1081,63 @@ h1{
     margin-left: 8px;
     margin-right: 8px;
     cursor: pointer;
+}
+
+
+.packingSymbolHolder
+{
+    position: relative;
+    width: 100%;
+    height: 3px;
+    padding: 0;
+    margin: 0;
+    line-height: 1px;
+    font-size: 1px;
+    display: inline-block;
+}
+
+.packingSymbol
+{
+    background-size: 100% 100%;
+    position: absolute;
+    max-width: 250px;
+    max-height: 250px;
+    width: 20vw;
+    height: 20vw;
+    opacity: .45;
+    z-index: -1;
+}
+
+.packingSymbolFragile
+{
+    background-image: url(/images/ooc/packing-symbol-fragile.png);
+    left: 60%;
+    top: -130px;
+    transform: rotate(-32deg);
+}
+
+.packingSymbolRain
+{
+    background-image: url(/images/ooc/packing-symbol-rain.png);
+    max-width: 200px;
+    max-height: 200px;
+    left: 2%;
+    top: -15px;
+    transform: rotate(12deg);
+}
+
+.packingSymbolRecycle
+{
+    background-image: url(/images/ooc/packing-symbol-recycle.png);
+    left: 70%;
+    top: -40px;
+    transform: rotate(-12deg);
+}
+
+.packingSymbolUp
+{
+    background-image: url(/images/ooc/packing-symbol-up.png);
+    left: 60%;
+    top: -15px;
+    transform: rotate(-32deg);
 }
