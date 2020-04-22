@@ -919,14 +919,6 @@ body{
 
 .cardboardBackground
 {
-    /*border: 50px solid transparent;
-    -webkit-border-image: url(/images/ooc/cardboard-AI.png) 50 round;
-    -webkit-border-image-outset: 30px;
-    border-image: url(/images/ooc/cardboard-AI.png) 50 round;
-    border-image-outset: 30px;
-    background-image: url(/images/ooc/cardboard-fill.png);
-    background-color: #dbac40;*/
-
     background: url(/images/ooc/cardboard-AI-largest-fill.png);
     background-size: 100% auto;
     background-repeat: repeat-y;
@@ -934,7 +926,13 @@ body{
     width: 90%;
     position: relative;
     border: 0px solid black;
-    z-index: -5;
+    /*z-index: -5;*/
+    margin-top: -40px;
+}
+
+.cardboardBackground *:not(.packingSymbolHolder):not(.packingSymbol):not(.packingSymbolFragile):not(.packingSymbolRain):not(.packingSymbolRecycle):not(.packingSymbolUp):not(.cardboardTop):not(.cardboardBottom)
+{
+    z-index: 5;
 }
 
 .cardboardBackground .hero
@@ -981,7 +979,7 @@ body{
     top: -150px;
     left: 0;
     border: 0px solid black;
-    z-index: -5;
+    /*z-index: -5;*/
 }
 
 .cardboardBottom
@@ -994,12 +992,13 @@ body{
     bottom: -160px;
     left: 0;
     border: 0px solid black;
-    z-index: -5;
+    /*z-index: -5;*/
 }
 
 .firstHeaderFix
 {
-    transform: translateY(-30px);
+
+    ttransform: translateY(-30px);
 }
 
 .tapeHeader
@@ -1011,6 +1010,7 @@ body{
     width: 95%;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .tapeHeader h1
@@ -1104,8 +1104,8 @@ h1{
     max-height: 250px;
     width: 20vw;
     height: 20vw;
-    opacity: .45;
-    z-index: -1;
+    pointer-events: none;
+    opacity: .35;
 }
 
 .packingSymbolFragile
@@ -1114,6 +1114,7 @@ h1{
     left: 60%;
     top: -130px;
     transform: rotate(-32deg);
+    z-index: 1 !important;
 }
 
 .packingSymbolRain
@@ -1124,20 +1125,25 @@ h1{
     left: 2%;
     top: -15px;
     transform: rotate(12deg);
+    z-index: 1 !important;
 }
 
 .packingSymbolRecycle
 {
     background-image: url(/images/ooc/packing-symbol-recycle.png);
-    left: 70%;
+    left: 75%;
     top: -40px;
     transform: rotate(-12deg);
+    z-index: 1 !important;
 }
 
 .packingSymbolUp
 {
     background-image: url(/images/ooc/packing-symbol-up.png);
-    left: 60%;
+    max-width: 200px;
+    max-height: 200px;
+    left: 2%;
     top: -15px;
-    transform: rotate(-32deg);
+    transform: rotate(12deg);
+    z-index: 1 !important;
 }
