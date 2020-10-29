@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <link rel="stylesheet" href="game.css">
+
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="ball.js"></script>
+    <script type="text/javascript" src="sprites.js"></script>
+</head>
+
+<body style="background-color: aliceblue">
+
+    <script>
+        window.onload = init;    
+    </script>
+
+<div style="text-align: center" id="loadingtext">Game window is loading...</div>
+
+    <table class="center">
+        <tr>
+            <td class="" id="gameWindow">
+            </td>
+        </tr>
+    </table>
+
+    <input type="range" min="0" max="400" value="40" class="slider" id="myRange">
+    sleep timer: <span id="slidervalue"></span>ms
+    
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("slidervalue");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+            updateSleepTime(this.value);
+        }
+    </script>
+
+</body>
+
+</html>

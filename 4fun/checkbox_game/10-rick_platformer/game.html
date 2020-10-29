@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+    <link rel="stylesheet" href="game.css">
+
+    <script type="text/javascript" src="sprites.js"></script>
+    <script type="text/javascript" src="renderer.js"></script>
+    <script type="text/javascript" src="rick.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="ui.js"></script>
+</head>
+
+<body style="background-color: aliceblue">
+
+    <script>
+        window.onload = init;    
+    </script>
+
+<div style="text-align: center" id="loadingtext">Game window is loading...</div>
+
+    <table class="center">
+        <tr>
+            <td class="" id="gameWindow">
+            </td>
+        </tr>
+    </table>
+
+
+    <br><br><br><br><br><br><br>
+
+    <div id="music" style="text-align: center;">
+        Obviously more fun if the music autoplays ¯\_(ツ)_/¯ <br>
+    <audio controls autoplay>
+        <source src="music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+
+    </div>
+
+</body>
+
+</html>
