@@ -1,19 +1,29 @@
 <!DOCTYPE html>
 <html>
 
+    <link rel="stylesheet" href="../css/custom_w3.css?v=2">
+    <link rel="stylesheet" href="../css/HPS.css?v=2">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css"> 
+    <script type="text/javascript" src="../js/HPS.js?v=2"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <head>
 
     <style>
-    body{
+        body{
+        margin-top: 85px;
+        }
+    body .main{
+
         text-align: center;
     }
-    a {
+    .main a {
         font-size: 1.5em;
         font-weight: bold;
         font-family: Arial, Helvetica, sans-serif;
         text-decoration: none;
     }
-    img {
+    .main img {
         width: 300px;
     }
     .line
@@ -27,16 +37,65 @@
         background-color: rgb(77, 77, 77);
         border-radius: 50%;
     }
+
+    .speechBubble
+    {
+        background-color: white;
+        text-align: center;
+        border-radius: 20px;
+        width: 60%;
+        min-width: 400px;
+        padding: 15px 100px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        margin-bottom: 60px;
+        position: relative;
+        border: 3px solid black;
+    }
+
+    .speechBubble h3{
+        margin: 0;
+    }
+
+    .speechBubble img{
+        border-radius: 50%;
+        width: 100px;
+        position: absolute;
+        right: -25px;
+        bottom: -25px;
+    }
     </style>
+
+<script>
+    $(function () {
+        $("#header").load("../jquery/header.html");
+    });
+</script>
 
 </head>
 <body style="background-color: aliceblue">
-<a href="clock/clock.html"> Checkbox Digital Clock</a><br>
-<a href="clock/clock.html"><img src="clock.png"></a>
 
-<br><div class="line"></div><br>
+    <header>
+        <div id="header"></div>
+    </header>
+
+    <div class="speechBubble">
+        <h3><b>Hey,</b></h3>
+        Welcome to the 'messing around' portion of Health Potion Studios.<br>All projects here were created by me, Alex. <br>Enjoy!<br>
+        <img src="../images/alex.jpg">
+    </div>
+
+    <div class="main">
+
+        
 <a href="hanoi/hanoi.html">Towers of Hanoi</a><br>
 <a href="hanoi/hanoi.html"><img src="hanoi.png"></a><br>
+
+
+<br><div class="line"></div><br>
+<a href="clock/clock.html"> Checkbox Digital Clock</a><br>
+<a href="clock/clock.html"><img src="clock.png"></a>
 
 <!--Checkbox-->
 <br><div class="line"></div><br>
@@ -73,10 +132,18 @@
 <a href="checkbox_game/9-platformer1/game.html"><img src="platformer1.png"></a>
 
 <br><div class="line"></div><br>
-<a href="checkbox_game/10-rick_platformer/game.html">Checkbox game Part 10:<br>Actually a Platformer</a><br>
-<a href="checkbox_game/10-rick_platformer/game.html"><img src="platformer2.png"></a>
+<a href="checkbox_game/10-best_platformer/game.html">Checkbox game Part 10:<br>Actually a Platformer</a><br>
+<a href="checkbox_game/10-best_platformer/game.html"><img src="platformer2.png"></a>
+
+<br><div class="line"></div><br>
+<a href="checkbox_game/11-doom/game.html">Checkbox game Part 11:<br>DOOM</a><br>
+<a href="checkbox_game/11-doom/game.html"><img src="doom.png"></a>
+<a href="checkbox_game/11-doom/game.html"><img src="doom2.png"></a>
 
 
+
+
+</div>
 <br><br><br><br><br><br>
 <br><br><br><br><br><br>
 

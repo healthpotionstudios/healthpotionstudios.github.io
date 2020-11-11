@@ -5,11 +5,37 @@ var activeObjects = [];
 var camStartAngle;
 var camEndAngle;
 
-var drawCanvas = true;
-var drawDebug = true;
+var drawCanvas = false;
+var drawDebug = false;
 
-var l = 20;
-var r = 35;
+var shooting = 0;
+var shootingTimer = 0;
+
+var l = 30;
+var r = 50;
+var bulletSpeed = .025;
+
+visibleEnemies = 0;
+
+var health = 100;
+var ammo = 35;
+var gameover = false;
+
+var bloodTimer = 0;
+
+currentLevel = 0;
+
+var miniPlayerOn = true;
+var miniTimer = 10;
+
+
+playerStart = [[17.5, 18.2], [18.5, 15.5], [18.5, 15.5]];
+level1Data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+level2Data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 1], [1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1], [1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+level3Data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1], [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
+
+//music
+let hurtSound, shootSound, impSound, cacoSound, dieSound, levelMusic, reloadSound,healthSound,doorSound,enemySound,enemyHitSound;
 
 imageSizes = [
     [35,40], //0
@@ -100,45 +126,39 @@ let imagetextures;
 let scalef = 1; // scales map view
 let raywidth = 0; // alters number of rays used/"resolution" of walls. 
 
-// A list of options that can be turned on and off (generally by the player).
-const toggles = {
-    mapView: false,
-    hideMaze: true,
-    showRays: true,
-    viewChanged: true,
-    statsDisplay: false,
-    raysMethod: "lerp",
-    textures: true,
-}
 
-// object for storing program statistics.
-const stats = {
-    fpsSum: 0,
-    fpsCount: 0,
-    msPerRay: 0,
-    msPerRaySum: 0,
-    msPerRayCount: 0,
-    tilesCheckedPerRay: 0,
-    tilesCheckedPerRaySum: 0,
-    tilesCheckedPerRayCount: 0,
-}
 
 /**
  * load necessary resources.
  */
 function preload() {
-    objects.push(new NPC(5,5,0,2));
-    objects.push(new NPC(2,2,0,2));
-    objects.push(new NPC(8,8,0,-1));
+
+
+    hurtSound = loadSound('hurt.wav');
+    shootSound = loadSound('shoot.wav');
+    impSound = loadSound('imp.wav');
+    cacoSound = loadSound('cacodemon.wav');
+    dieSound = loadSound('die.wav');
+    reloadSound = loadSound('reload.wav');
+    healthSound = loadSound('health.wav');
+    doorSound = loadSound('door.wav');
+    enemySound = loadSound('enemyDie.wav');
+    enemyHitSound = loadSound('enemyHit.wav');
+
+    levelMusic = loadSound('level.mp3');
+
 }
 
 /**
  * Set up the sketch.
  */
 function setup() {
-    createUIGrid("gameWindow", "ui");
+    
     renderer.Init();
-    updateUI("DOOM");
+
+
+    createUIGrid("gameWindow", "ui");
+    updateUI("     Prfss fntfr"); //e was overridden 
 
     createCanvas(800, 500);
 
@@ -151,32 +171,55 @@ function setup() {
  */
 function draw() {
 
+    if (currentLevel == 0)
+    {
+        renderer.DrawSprite(0,0,0,0,4); //draw title
+        renderer.updateDisplay("window");
+        return;
+    }
+    else if (currentLevel == 4)
+    {
+        renderer.clear("window");
+        renderer.DrawSprite(0,0,1,0,2); //draw you win
+        renderer.updateDisplay("window");
+        return;
+    }
+
     // move player
-    if (keyIsDown(LEFT_ARROW)) {
-        cam.rotateCW();
+    if (health != 0)
+    {
+        if (keyIsDown(LEFT_ARROW)) {
+            cam.rotateCW();
+        }
+        if (keyIsDown(RIGHT_ARROW)) {
+            cam.rotateCCW();
+        }
+        if (keyIsDown(UP_ARROW)) {
+            cam.moveForward();
+        }
+        if (keyIsDown(DOWN_ARROW)) {
+            cam.moveBackward();
+        }
     }
-    if (keyIsDown(RIGHT_ARROW)) {
-        cam.rotateCCW();
+
+
+    if (shootingTimer != 0)
+    {
+        shootingTimer--;
+        if (shootingTimer == 0)
+        {
+            shooting = 0;
+        }
     }
-    if (keyIsDown(UP_ARROW)) {
-        cam.moveForward();
-    }
-    if (keyIsDown(DOWN_ARROW)) {
-        cam.moveBackward();
-    }
+
 
     // check and correct player intersection with walls
     cam.checkCollisions(grid);
-
-    // draw view
-    // only draw if necessary to help maintain good framerate
-    //if (cam.hasMoved() || toggles.viewChanged) 
+    if (currentLevel != 4)
     {
         renderer.StartFrame();
         renderer.refreshDisplay("window");
         background(30);
-        toggles.viewChanged = false;
-        stats.tilesCheckedPerRay = 0;
 
         grid.unhideCell(cam.pos.x, cam.pos.y);
 
@@ -191,10 +234,8 @@ function draw() {
             noStroke();
             for (let y = 0; y < grid.height; y++) {
                 for (let x = 0; x < grid.width; x++) {
-                    if (grid.match(x, y, SOLID) ||
-                        (toggles.hideMaze && grid.match(x, y, HIDDEN))) {
-                        let c = vecToColor(colorFromCell(grid.cell(x, y)));
-                        fill(c);
+                    if (grid.match(x, y, SOLID)) {
+                        fill(75);
                         rect(x, y, 1, 1);
                     }
                 }
@@ -203,8 +244,8 @@ function draw() {
             strokeWeight(0.01);
             noFill();
 
-            // either draw the actual rays traced or a simple directional indicator.
-            if (toggles.showRays) {
+            
+            {
                 let hit = new Hit();
                 for (const dir of cam.getRays(dirs)) {
                     stroke(0, 0, 255);
@@ -228,35 +269,9 @@ function draw() {
 
                 
             } 
-            // else {
-            //     fill(0, 0, 255);
-            //     ellipse(cam.pos.x, cam.pos.y, 0.4);
-            //     stroke(0, 255, 0);
-            //     strokeWeight(0.08);
-            //line(cam.pos.x, cam.pos.y, cam.pos.x + 0.5 * Math.cos(cam.rot), cam.pos.y + 0.5 * Math.sin(cam.rot));
-            // }
             pop();
 
-            
-
-            noStroke();
-            fill(255);
-            // text(
-            //     'angle between: ' +
-            //       result.toFixed(2) +
-            //       ' radians or ' +
-            //       degrees(result).toFixed(2) +
-            //       ' degrees',
-            //     cam.pos.x*scalef,
-            //     cam.pos.y*scalef + 10
-            //   );
-
-            // text(degrees(pleft).toString(), cam.pos.x * scalef + start.x*scalef,cam.pos.y * scalef + start.y*scalef);
-            // fill(255,0,0);
-            // text(degrees(pright).toString(), cam.pos.x * scalef + end.x*scalef,cam.pos.y * scalef + end.y*scalef);
-            // fill(255);
-            // text(degrees(result).toString(),objects.pos.x * scalef,objects.pos.y * scalef);
-
+        
 
         } 
         
@@ -324,6 +339,11 @@ function draw() {
 
             for (var i = 0; i < objects.length; i ++)
             {
+                if (objects[i].type != 0 && objects[i].type != 2)
+                {
+                    objects[i].update();
+                }
+
                 var P2 = createVector(objects[i].pos.x+10, objects[i].pos.y);
                 var P1 = createVector(objects[i].pos.x, objects[i].pos.y);
                 var P3 = createVector(cam.pos.x,cam.pos.y);
@@ -364,20 +384,29 @@ function draw() {
                     ellipse(objects[i].pos.x * scalef, objects[i].pos.y * scalef, 20);
                 }
 
+                var a = objects[i].pos.x - cam.pos.x;
+                var b = objects[i].pos.y - cam.pos.y;
+                var pdist = Math.sqrt( a*a + b*b );
+                objects[i].pdist = pdist;
+                if (pdist < .6)
+                {
+                    objects[i].proximityEvent();
+                }
 
                 
                 if (pleft < result && pright > result)
                 {
 
                     marchRay(hit, objects[i].pos, p5.Vector.fromAngle(result-PI), grid);
-                    var a = objects[i].pos.x - cam.pos.x;
-                    var b = objects[i].pos.y - cam.pos.y;
                     
-                    var pdist = Math.sqrt( a*a + b*b );
 
-                    if (pdist < hit.d && pdist > .6)
+                    if (pdist < hit.d && pdist > .6 && pdist < 9.5)
                     {
 
+                        if (objects[i].type == 0 || objects[i].type == 2)
+                        {
+                            objects[i].update();
+                        }
 
                         if (drawDebug)
                         {
@@ -426,35 +455,81 @@ function draw() {
                         //circle(width*percent, height/2, arr[index]);
                         //renderer.DrawCircle(int(renderer.width*percent),25, int(arr[index]/10));
                         //renderer.DrawSprite(int(renderer.width*percent) - 17, 10-index, objects[i].getArt(), index);
-                        activeObjects.push([int(renderer.width*percent) - 17, 10-index, i, index]);
+                        //                               0                       1      2    3      4
+                        //                               x                       y    index  0-6   dist   
+                        activeObjects.push([int(renderer.width*percent) - 17, 10-index, i, index, pdist]);
                         //text((pdist).toString(), cam.pos.x * scalef,cam.pos.y * scalef);
                     }
                 }
             }
 
+            activeObjects = activeObjects.sort((a, b) => b[4] - a[4]); //sort by distance
+
             //render objects
             for (var i = 0; i < activeObjects.length; i ++)
             {
-                //                                   x                    y                       object                          index
-                renderer.DrawSprite(activeObjects[i][0], activeObjects[i][1], objects[activeObjects[i][2]].getArt(), activeObjects[i][3]);
+                if (objects[activeObjects[i][2]].type == 4) //bullet
+                {
+                    //renderer.DrawCircle(activeObjects[i][0] + int(imageSizes[activeObjects[i][3]][0]/2) + imageOffsets[activeObjects[i][3]][0],
+                    //                   25, 7 - int(activeObjects[i][4]));
+                    renderer.DrawSprite(activeObjects[i][0], activeObjects[i][1], 4, activeObjects[i][3], 0);
+                }
+                else //anything else
+                {
+                    //                                   x                    y                       object                          index
+                    renderer.DrawSprite(activeObjects[i][0], activeObjects[i][1], objects[activeObjects[i][2]].getArt(), activeObjects[i][3], 0);
+                }
             }
+
+            for (var i = 0; i < objects.length; i ++)
+            {
+                if (objects[i].queuedForDeletion)
+                {
+                    delete objects[i];
+                    objects.splice(i,1);
+                    i = 0;
+                }
+            }
+
             
-            renderer.DrawLine(l,0,l,50);
-            renderer.DrawLine(r,0,r,50);
+            //show shoot range
+            //renderer.DrawLine(l,0,l,50);
+            //renderer.DrawLine(r,0,r,50);
+
+            renderer.DrawSprite(35,36,shooting,0,1);
         }
+
+        if (bloodTimer != 0)
+        {
+            bloodTimer--;
+            renderer.DrawSprite(0,0,0,0,3);
+        }
+
+        if (health == 0)
+        {
+            renderer.DrawSprite(0,0,0,0,2);
+        }
+
+        
+        updateMiniMap();
 
         renderer.updateDisplay("window");
     }
 
 }
 
-/**
- * a simple function to calculate the y-position of text based on a "row".
- * used in displaying statistics.
- * @param {number} n row number
- */
-function row(n) {
-    return 15 * (n + 1);
+
+function spawnEnemyBullet(x,y)
+{
+        var distanceX = x - cam.pos.x;
+        var distanceY = y - cam.pos.y;
+        
+        var magnitude = Math.sqrt( distanceX * distanceX + distanceY * distanceY );
+
+        var deltaX = distanceX * bulletSpeed / magnitude;
+        var deltaY = distanceY * bulletSpeed / magnitude;
+
+        objects.push(new NPC(x,y,4,-2,true,[deltaX,deltaY],objects.length)); //bullet
 }
 
 /**
@@ -462,44 +537,284 @@ function row(n) {
  */
 function keyPressed() {
     if (keyCode === 32) { // space
-        // for (var i = 0; i < objects.length; i ++)
-        // {
-        //     objects[i].takeDamage();
-        // }
-        for (var i = 0; i < activeObjects.length; i ++)
+        if (shootingTimer == 0 && ammo > 0 && health != 0 && currentLevel != 0)
         {
-            if (objects[activeObjects[i][2]].health == -1)
+            shootingTimer = 15;
+            shooting = 1;
+            ammo--;
+            shootSound.play();
+            updateGameplayUI();
+            for (var i = activeObjects.length-1; i >= 0; i--) //reverse array for distances
             {
-                continue;
+                if (objects[activeObjects[i][2]].health < 0)
+                {
+                    continue;
+                }
+                if (activeObjects[i][0]+18 > l && activeObjects[i][0]+18 < r)
+                {
+                    objects[activeObjects[i][2]].takeDamage();
+                    break;
+                }
             }
-            if (activeObjects[i][0]+18 > l && activeObjects[i][0]+18 < r)
-            {
-                objects[activeObjects[i][2]].takeDamage();
-                break;
-            }
-        }
+        }       
     }
-    if (keyCode === 83) { // s key
-        toggles.statsDisplay = !toggles.statsDisplay;
-        toggles.showRays = !toggles.showRays; // TODO: piggyback for now
-        toggles.viewChanged = true;
-    }
-    if (keyCode === 72) { // h key
-        toggles.hideMaze = !toggles.hideMaze;
-        toggles.viewChanged = true;
-    }
+    
+    if (keyCode == 13) //enter
+    {
+        if (currentLevel == 0)
+        {
+            currentLevel ++;
+            levelMusic.loop();
+            levelMusic.play();
+            updateGameplayUI();
 
-    if (keyCode === 84) { // t key
-        toggles.textures = !toggles.textures;
-    }
-    if (keyCode === 80) { // p key
-        if (tex == imagetextures) {
-            tex = generateTexture(wallColor, exitColor);
-        } else {
-            tex = imagetextures;
+            objects.push(new NPC(4.5,1.5,5,-2)); //door
+            objects.push(new NPC(7.5,1.5,7,-2)); //ammo
+            objects.push(new NPC(8.5,1.5,7,-2)); //ammo
+            objects.push(new NPC(17.5,1.5,6,-2)); //health
+            objects.push(new NPC(2.5,2.5,0,3)); //imp
+            objects.push(new NPC(17.5,3.5,6,-2)); //health
+            objects.push(new NPC(4.5,5.5,2,5)); //caco
+            objects.push(new NPC(11.5,5.5,2,5)); //caco
+            objects.push(new NPC(18.5,5.5,7,-2)); //ammo
+            objects.push(new NPC(16.5,7.5,0,3)); //imp
+            objects.push(new NPC(13.5,10.5,0,3)); //imp
+            objects.push(new NPC(2.5,11.5,0,3)); //imp
+            objects.push(new NPC(5.5,11.5,7,-2)); //ammo
+            objects.push(new NPC(9.5,11.5,0,3)); //imp
+            objects.push(new NPC(9.5,13.5,0,3)); //imp
+            objects.push(new NPC(2.5,16.5,0,3)); //imp
+            objects.push(new NPC(1.5,17.5,6,-2)); //health
+            objects.push(new NPC(12.5,17.5,0,3)); //imp
+            objects.push(new NPC(6.5,18.5,0,3)); //imp
         }
     }
 }
+
+function playerGotHit()
+{
+    health -= 7;
+    if (health <= 0)
+    {
+        if (!gameover)
+        {
+            gameover = true;
+            dieSound.play();
+        }
+        health = 0;
+    }
+    if (!gameover)
+    {
+        hurtSound.play();
+    }
+    bloodTimer = 20;
+    updateGameplayUI();
+}
+
+function updateGameplayUI()
+{
+    var str = "@";
+    //  @###|~## |a|
+    if (health == 100)
+    {
+        str += "100";
+    }
+    else if (health < 100 && health > 9)
+    {
+        str += " ";
+        str += health.toString();
+    }
+    else if (health < 10 && health > 0)
+    {
+        str += "  ";
+        str += health.toString();
+    }
+    else if (health == 0)
+    {
+        str += "  0";
+    }
+    str += "%|~";
+    if (ammo < 100 && ammo > 9)
+    {
+        str += ammo.toString();
+    }
+    else if (ammo < 10 && ammo > 0)
+    {
+        str += " ";
+        str += ammo.toString();
+    }
+    else if (ammo == 0)
+    {
+        str += " 0";
+    }
+    str += "|";
+    if (health == 100)
+    {
+        str += "a|";
+    }
+    else if (health == 0)
+    {
+        str += "e|"
+    }
+    else if (health < 100 && health > 66)
+    {
+        str += "b|";
+    }
+    else if (health < 67 && health > 33)
+    {
+        str += "c|";
+    }
+    else if (health < 34 && health > 0)
+    {
+        str += "d|";
+    }
+
+    str += "  lfvfl: " + currentLevel.toString();
+
+    updateUI(str);
+}
+
+
+function endOfLevel()
+{
+    for (var i = 0; i < objects.length; i ++)
+    {
+        objects[i].queuedForDeletion = true;
+    }
+
+    currentLevel ++;
+    if (currentLevel == 2)
+    {
+        if (!levelMusic.isPlaying())
+        {
+            levelMusic.play();
+        }
+        updateGameplayUI();
+        cam.moveCam(playerStart[1][0], playerStart[1][1]);
+        grid = new Grid(level2Data);
+
+        objects.push(new NPC(8.5,1.5,7,-2)); //ammo
+        objects.push(new NPC(17.5,1.5,6,-2)); //health
+        objects.push(new NPC(8.5,2.5,7,-2)); //ammo
+        objects.push(new NPC(9.5,2.5,7,-2)); //ammo
+        objects.push(new NPC(11.5,2.5,0,3)); //imp
+        objects.push(new NPC(12.5,2.5,0,3)); //imp
+        objects.push(new NPC(14.5,2.5,0,3)); //imp
+        objects.push(new NPC(8.5,3.5,6,-2)); //health
+        objects.push(new NPC(9.5,3.5,6,-2)); //health
+        objects.push(new NPC(2.5,5.5,0,3)); //imp
+        objects.push(new NPC(18.5,5.5,0,3)); //imp
+        objects.push(new NPC(1.5,6.5,7,-2)); //ammo
+        objects.push(new NPC(7.5,6.5,2,5)); //caco
+        objects.push(new NPC(12.5,6.5,0,3)); //imp
+        objects.push(new NPC(14.5,6.5,0,3)); //imp
+        objects.push(new NPC(7.5,8.5,2,5)); //caco
+        objects.push(new NPC(5.5,10.5,0,3)); //imp
+        objects.push(new NPC(8.5,10.5,0,3)); //imp
+        objects.push(new NPC(13.5,10.5,2,5)); //caco
+        objects.push(new NPC(2.5,11.5,0,3)); //imp
+        objects.push(new NPC(18.5,11.5,2,5)); //caco
+        objects.push(new NPC(11.5,13.5,0,3)); //imp
+        objects.push(new NPC(13.5,13.5,2,5)); //caco
+        objects.push(new NPC(9.5,14.5,5,-2)); //door
+        objects.push(new NPC(3.5,15.5,7,-2)); //ammo
+        objects.push(new NPC(13.5,15.5,0,3)); //imp
+        objects.push(new NPC(1.5,17.5,6,-2)); //health
+        objects.push(new NPC(5.5,18.5,0,3)); //imp
+
+    }
+    else if (currentLevel == 3)
+    {
+        if (!levelMusic.isPlaying())
+        {
+            levelMusic.play();
+        }
+        updateGameplayUI()
+        cam.moveCam(playerStart[2][0], playerStart[2][1]);
+        grid = new Grid(level3Data);
+
+        objects.push(new NPC(2.5,1.5,7,-2)); //ammo
+        objects.push(new NPC(4.5,1.5,7,-2)); //ammo
+        objects.push(new NPC(21.5,1.5,6,-2)); //health
+        objects.push(new NPC(3.5,2.5,6,-2)); //health
+        objects.push(new NPC(7.5,2.5,2,5)); //caco
+        objects.push(new NPC(12.5,2.5,0,3)); //imp
+        objects.push(new NPC(14.5,2.5,0,3)); //imp
+        objects.push(new NPC(17.5,2.5,0,3)); //imp
+        objects.push(new NPC(18.5,3.5,0,3)); //imp
+        objects.push(new NPC(17.5,4.5,0,3)); //imp
+        objects.push(new NPC(2.5,5.5,0,3)); //imp
+        objects.push(new NPC(21.5,5.5,0,3)); //imp
+        objects.push(new NPC(1.5,6.5,7,-2)); //ammo
+        objects.push(new NPC(7.5,6.5,2,5)); //caco
+        objects.push(new NPC(12.5,6.5,0,3)); //imp
+        objects.push(new NPC(14.5,6.5,0,3)); //imp
+        objects.push(new NPC(7.5,8.5,2,5)); //caco
+        objects.push(new NPC(23.5,8.5,0,3)); //imp
+        objects.push(new NPC(1.5,9.5,2,5)); //caco
+        objects.push(new NPC(12.5,9.5,2,5)); //caco
+        objects.push(new NPC(21.5,9.5,0,3)); //imp
+        objects.push(new NPC(2.5,11.5,0,3)); //imp
+        objects.push(new NPC(10.5,11.5,0,3)); //imp
+        objects.push(new NPC(11.5,11.5,0,3)); //imp
+        objects.push(new NPC(7.5,12.5,2,5)); //caco
+        objects.push(new NPC(15.5,12.5,0,3)); //imp
+        objects.push(new NPC(17.5,13.5,6,-2)); //health
+        objects.push(new NPC(19.5,13.5,7,-2)); //ammo
+        objects.push(new NPC(10.5,15.5,6,-2)); //health
+        objects.push(new NPC(11.5,15.5,7,-2)); //ammo
+        objects.push(new NPC(13.5,15.5,0,3)); //imp
+        objects.push(new NPC(11.5,17.5,2,5)); //caco
+        objects.push(new NPC(2.5,18.5,2,5)); //caco
+        objects.push(new NPC(8.5,18.5,0,3)); //imp
+        objects.push(new NPC(5.5,20.5,0,3)); //imp
+        objects.push(new NPC(22.5,20.5,7,-2)); //ammo
+        objects.push(new NPC(23.5,20.5,6,-2)); //health
+        objects.push(new NPC(11.5,21.5,5,-2)); //door
+        objects.push(new NPC(18.5,21.5,2,5)); //caco
+        objects.push(new NPC(23.5,21.5,7,-2)); //ammo
+        objects.push(new NPC(20.5,23.5,2,5)); //caco
+    }   
+}
+
+
+function updateMiniMap()
+{
+    var px = Math.floor(cam.pos.x) - 4;
+    var py = Math.floor(cam.pos.y) - 4;
+    miniTimer--;
+    if (miniTimer == 0)
+    {
+        miniTimer = 10;
+        miniPlayerOn = !miniPlayerOn;
+    }
+    for(var y = 0; y < 11; y++)
+    {
+        for(var x = 0; x < 11; x++)
+        {
+            if (px+x >= 0 && px+x < grid.width && py+y >= 0 && py+y < grid.height)
+            {
+                if (grid.data[py+y][px+x] == 1)
+                {
+                    renderer.SetPixel([x,y]);
+                }
+                else
+                {
+                    renderer.UnsetPixel([x,y]);
+                }
+            }
+            else
+            {
+                renderer.UnsetPixel([x,y]);
+            }
+        }
+    }
+    if (miniPlayerOn)
+    {
+        renderer.SetPixel([4,4]);
+    }
+}
+
 
 
 /**
@@ -512,97 +827,21 @@ function calculateRenderingParams() {
         scalef = Math.ceil(width / (gridw + 1));
     }
 
-    // raywidth = Math.ceil((height / width) * (width / 300)); // apparently the KEY was h/w instead of w/h??
-    // dirs = new Array(Math.ceil(width / raywidth));
     raywidth = 5;
     dirs = new Array(80*2);
     for (let i = 0; i < dirs.length; i++) { dirs[i] = createVector(); }
-    bg = createBackgroundImage(width, height, 1);
 }
 
-/**
- * Generate the 'bg' image used as the background (floor and ceiling) of
- * the 3D view.
- * @param {number} width window width
- * @param {number} height window height
- * @param {number} barHeight 
- */
-function createBackgroundImage(width, height, barHeight) {
-    let bg = createGraphics(width, height);
-    bg.background(0);
-    const hh = height / 2;
-    const maxh = hh / barHeight
-    for (let h = 0; h < maxh; h++) {
-        let c = 100 * (1 - h / maxh);
-        bg.fill(c);
-        bg.stroke(c);
-        bg.rect(0, hh, width, -(hh - h * barHeight)); // ceiling
-        bg.rect(0, hh, width, hh - h * barHeight); // floor
-    }
-    return bg;
-}
 
-/**
- * Generates a wall and exit texture using perlin noise.
- * @param {number} wall wall color (as cell data)
- * @param {number} exit exit color (as cell data)
- * @returns {p5.Image[]} the textures
- */
-function generateTexture(wall, exit) {
-    let gentex = [];
-    const size = 128;
-    let img = createImage(size, size);
-    img.loadPixels();
-    let xoff = 0;
-    let xfreq = random(1, 5);
-    let yoff = 0;
-    let yfreq = random(1, 5);
-    let w = colorFromCell(wall);
-    for (let y = 0; y < img.width; y++) {
-        for (let x = 0; x < img.height; x++) {
-            let col = p5.Vector.mult(w, (noise(xoff, yoff)));
-            img.set(x, y, vecToColor(col));
-            xoff += xfreq / size;
-        }
-        yoff += yfreq / size;
-        xoff = 0;
-    }
-    img.updatePixels();
-    gentex[SOLID] = img;
-
-    img = createImage(size, size);
-    img.loadPixels();
-    for (let y = 0; y < img.width; y++) {
-        for (let x = 0; x < img.height; x++) {
-            img.set(x, y, vecToColor(colorFromCell(exit)));
-        }
-    }
-    img.updatePixels();
-    gentex[EXIT] = img;
-    return gentex;
-}
-
-/**
- * chooses a random texture set from "textures".
- * @returns {p5.Image[]} the SOLID and EXIT textures
- */
-function pickRandomTextures() {
-    let newtex = [];
-    newtex[SOLID] = random(textures.walls);
-    newtex[EXIT] = random(textures.doors);
-    return newtex;
-}
 
 /**
  * initialize system.
  */
 function createGridAndPlaceCam() {
-    imagetextures = pickRandomTextures();
-    tex = imagetextures;
-    grid = new Grid(gridw, gridh, wallColor, exitColor);
+
+    grid = new Grid(level1Data);
     let pos = findPlaceNotInWall(grid.data);
-    cam = new Camera(pos.x, pos.y);
-    //objects = new Enemy(5,5);
+    cam = new Camera(playerStart[0][0], playerStart[0][1]);
 }
 
 /**
@@ -617,7 +856,7 @@ class Camera {
      * @param {number} rot initial angle in radians
      * @param {number} fov desired field of view.
      */
-    constructor(x = 0, y = 0, rot = 0, fov = QUARTER_PI) {
+    constructor(x = 0, y = 0, rot = PI + PI/2, fov = QUARTER_PI) {
         this.pos = createVector(x, y);
         this.prevPos = createVector();
         this.rot = rot; //radians
@@ -669,6 +908,13 @@ class Camera {
         this.moveForward(-speed);
     }
 
+    moveCam(x,y,rot = PI + PI / 2)
+    {
+        this.pos.x = x;
+        this.pos.y = y;
+        this.rot = rot;
+    }
+
     /**
      * check if camera has moved since the last time this method was called.
      * this is used in the draw() function as part of check to redraw
@@ -711,11 +957,6 @@ class Camera {
      * @param {Grid} grid 
      */
     checkCollisions(grid) {
-        if (grid.match(this.pos.x, this.pos.y, EXIT)) {
-            console.log("found exit");
-            createGridAndPlaceCam();
-            return;
-        }
         this.correctWallViolation(grid);
     }
 
@@ -803,8 +1044,6 @@ function marchRay(hit, pos, dir, grid) {
         pos.x += dir.x * 0.00000001; // offset the new position slightly
         pos.y += dir.y * 0.00000001; // to ensure the 'next' cell is checked.
         wall = grid.match(pos.x, pos.y, SOLID);
-
-        stats.tilesCheckedPerRay++;
     }
 
     hit.pos.set(pos);
@@ -812,7 +1051,6 @@ function marchRay(hit, pos, dir, grid) {
     hit.d = p5.Vector.dist(posOrig, pos);
     hit.gridpos = getCellCoords(pos);
 
-    stats.msPerRay += Date.now() - starttime;
 
     return hit;
 }
@@ -827,6 +1065,8 @@ function getCellCoords(pos) {
     return createVector(gridx, gridy);
 }
 
+
+
 /**
  * Grid encapsulates the world. Cells are represented with a 32-bit integer
  * value. The lowest byte is a series of bitflags indicating things such as if
@@ -835,26 +1075,11 @@ function getCellCoords(pos) {
  * bitwise operations performed in later grid/maze manipulation functions.
  */
 class Grid {
-    /**
-     * creates a new grid using wilson's maze generation algorithm.
-     */
-    constructor(width, height, wallColor = COLOR_W, exitColor = COLOR_G) {
-        //this.data = generateGridWilson(width, height, wallColor);
-        this.data = [
-            [1,1,1,1,1,1,1,1,1,1],
-            [1,0,0,0,0,0,0,1,0,1],
-            [1,0,0,1,1,0,0,1,0,1],
-            [1,0,0,1,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,1],
-            [1,0,0,0,0,0,0,1,0,1],
-            [1,0,0,0,0,0,1,0,0,1],
-            [1,0,0,0,0,1,0,0,0,1],
-            [1,0,0,0,0,0,0,0,0,1],
-            [1,1,1,1,1,1,1,1,1,1],
-        ]
-        //makeExteriorWalls(this.data, wallColor);
-        //placeExit(this.data, exitColor);
-        //hideMazePassages(this.data, wallColor);
+    constructor(data) {
+
+        this.data = data;
+
+
         this.height = this.data.length;
         this.width = this.data[0].length;
     }
@@ -869,12 +1094,7 @@ class Grid {
         
         let gridx = Math.floor(x);
         let gridy = Math.floor(y);
-        // try{
              return this.data[gridy][gridx];
-        // }
-        // catch{
-        //     return 0;
-        // }
     }
 
     /**
@@ -913,249 +1133,17 @@ function cellIs(cell, flags) {
  * cell solid.
  * @param {number[][]} grid the 'world' grid in raw data form
  */
-function makeExteriorWalls(grid, color) {
+function makeExteriorWalls(grid) {
     for (let y = 0; y < grid.length; y++) {
         if (y == 0 || y == grid.length - 1) {
             for (let x = 0; x < grid[y].length; x++) {
-                grid[y][x] = SOLID | color;
+                grid[y][x] = SOLID;
             }
         } else {
-            grid[y][0] = SOLID | color;
-            grid[y][grid[y].length - 1] = SOLID | color;
+            grid[y][0] = SOLID ;
+            grid[y][grid[y].length - 1] = SOLID ;
         }
     }
-}
-
-/**
- * This basically sets the 'hidden' flag on all non-wall cells.
- * @param {number[][]} grid the 'world' grid in raw data form
- */
-function hideMazePassages(grid, wallColor) {
-    // TODO: i could just set and unset the color. better? worse?
-    for (let y = 1; y < grid.length - 1; y++) {
-        for (let x = 1; x < grid[y].length - 1; x++) {
-            if (!cellIs(grid[y][x], SOLID)) {
-                grid[y][x] |= HIDDEN | wallColor;
-            }
-        }
-    }
-}
-
-/**
- * places the exit in a wall in a random location that is guaranteed to be 
- * accessible to the player.
- * @param {number[][]} grid the 'world' grid in raw data form.
- * @param {number} color color of the exit
- */
-function placeExit(grid, color) {
-    // start not in wall. take random walk until hitting a wall.
-    let pos = findPlaceNotInWall(grid);
-    let inWall = false;
-    while (!inWall) {
-        takeRandomStep(pos);
-        inWall = cellIs(grid[Math.floor(pos.y)][Math.floor(pos.x)], SOLID);
-    }
-    grid[Math.floor(pos.y)][Math.floor(pos.x)] = EXIT | color;
-}
-
-/**
- * Steps through each position and generates a grid cell with the value
- * returned from function "f".
- * @param {number} w width of grid
- * @param {number} h height of grid
- * @param {number} wallColor
- * @param {(x,y,w,h,wc)=>number} f function returning the cell data given the x,y grid position
- * @returns {number[][]}
- */
-function generateGridRandom(w, h, wallColor,
-    f = (x, y, w, h, wc) => Math.random() < 0.2 ? SOLID | wc : NONE) {
-    let grid = new Array(h);
-    for (let y = 0; y < h; y++) {
-        grid[y] = new Array(w);
-        for (let x = 0; x < w; x++) {
-            grid[y][x] |= f(x, y, w, h, wallColor);
-        }
-    }
-    return grid;
-}
-
-/**
- * generates a grid completely of walls
- * @param {number} w width
- * @param {number} h height
- * @param {number} wallColor 
- */
-function generateSolidGrid(w, h, wallColor) {
-    let grid = new Array(h);
-    for (let y = 0; y < grid.length; y++) {
-        grid[y] = new Array(w);
-        for (let x = 0; x < grid[y].length; x++) {
-            grid[y][x] = SOLID;
-        }
-    }
-    return grid;
-}
-
-/**
- * Generates a grid of random walks which may overlap. This is like a worm
- * eating out passages in a block of wood.
- * @param {number} w width
- * @param {number} h height
- * @param {number} wallColor 
- * @param {number} walkLen length of the random walks to take
- * @param {number} numWalks the number of random walks to take
- */
-function generateGridRandomWalks(w, h, wallColor, walkLen, numWalks) {
-    // create grid completely solid
-    let grid = generateSolidGrid(w, h, wallColor);
-
-    // carve out numWalks random walks
-    for (let n = 0; n < numWalks; n++) {
-        let pos = createVector(Math.floor(random(1, w)), Math.floor(random(1, h)));
-        for (let step = 0; step < walkLen; step++) {
-            grid[pos.y][pos.x] = NONE;
-            takeRandomStep(pos);
-            pos.x = constrain(pos.x, 1, w - 1);
-            pos.y = constrain(pos.y, 1, h - 1);
-        }
-    }
-
-    return grid;
-}
-
-/**
- * Create a grid/maze using Wilson's Algorithm. 
- * 
- * Wilson's basically creates a maze by taking acyclic random walks that
- * start in a "wall" part of the maze and end in a "passage" part of the maze.
- * For a good description of the algorithm, see: 
- * http://weblog.jamisbuck.org/2011/1/20/maze-generation-wilson-s-algorithm
- * @param {number} w width
- * @param {number} h height
- * @param {number} wallColor 
- */
-function generateGridWilson(w, h, wallColor) {
-    // flags for maze (top, right, bottom, left)
-    const T = 1;
-    const R = 2;
-    const B = 4;
-    const L = 8;
-    const IN = 16; // in maze (aka already added)
-    // create completely solid maze
-    const mw = Math.floor(w / 2);
-    const mh = Math.floor(h / 2);
-    let maze = new Array(mh);
-    for (let y = 0; y < mh; y++) {
-        maze[y] = new Array(mw);
-        for (let x = 0; x < mw; x++) {
-            maze[y][x] = T | R | B | L; // set all 'walls'
-        }
-    }
-
-    // 0. choose inital place not IN to set to IN
-    let notIn = () => randPosPredicate(maze, true, (x, y) => (maze[y][x] & IN) == 0);
-    let pos = notIn();
-    maze[pos.y][pos.x] |= IN;
-    let visted = [];
-    while ((pos = notIn()) != undefined) {
-        // 1. choose a random place in maze not IN, add to visited
-        visted.push(pos.copy());
-
-        let takingAWalk = true;
-        while (takingAWalk) {
-            // 2. take random walk, keeping list of visited cells
-            takeRandomStep(pos);
-            pos.x = constrain(pos.x, 0, mw - 1); // don't leave maze
-            pos.y = constrain(pos.y, 0, mh - 1);
-            visted.push(pos.copy());
-            // 3. if visit a cell that is IN, stop
-            if ((maze[pos.y][pos.x] & IN) == IN) {
-                takingAWalk = false;
-            } else {
-                // 3.5 if visit a previously visted cell, delete the loop from the list
-                let prev = visted.findIndex((p) => pos.x == p.x && pos.y == p.y);
-                if (prev > -1 && prev < visted.length - 1) {
-                    visted = visted.slice(0, prev + 1); // keep 0-prev. discards looped walk path
-                }
-            }
-        }
-
-        // 4. use the generated list of visited cells to 'carve' path. set cells as IN.
-        for (let i = 1; i < visted.length; i++) {
-            let d = p5.Vector.sub(visted[i], visted[i - 1]);
-            let x = visted[i].x;
-            let y = visted[i].y;
-            // remove walls. maze[0][0] is in "top left"
-            if (d.x == 0 && d.y == 1) { // moved down
-                maze[y][x] &= ~T;
-                maze[y - d.y][x - d.x] &= ~B;
-            } else if (d.x == 0 && d.y == -1) { // moved up
-                maze[y][x] &= ~B;
-                maze[y - d.y][x - d.x] &= ~T;
-            } else if (d.x == 1 && d.y == 0) { // moved right
-                maze[y][x] &= ~L;
-                maze[y - d.y][x - d.x] &= ~R;
-            } else if (d.x == -1 && d.y == 0) { // moved left
-                maze[y][x] &= ~R;
-                maze[y - d.y][x - d.x] &= ~L;
-            }
-            // set IN
-            maze[y][x] |= IN;
-            maze[y - d.y][x - d.x] |= IN;
-        }
-        // 5. go to 1
-        visted = []; // clear array
-    }
-
-    // convert maze to grid by asking for a wide solid grid, then carving out
-    // grid cells where according to the connected cells in the maze.
-    // simple func to convert a maze index to a 'grid' index
-    // grid_index = maze_index*2 + 1
-    let gi = (mi) => (mi * 2) + 1;
-    let grid = generateSolidGrid(gi(mw), gi(mh), wallColor);
-    for (let y = 0; y < mh; y++) {
-        for (let x = 0; x < mw; x++) {
-            // carve out the current part of the maze
-            grid[gi(y)][gi(x)] = NONE;
-            // cut out appropriate adjacent walls
-            if ((maze[y][x] & T) == 0) {
-                grid[gi(y) - 1][gi(x)] = NONE;
-            }
-            if ((maze[y][x] & B) == 0) {
-                grid[gi(y) + 1][gi(x)] = NONE;
-            }
-            if ((maze[y][x] & R) == 0) {
-                grid[gi(y)][gi(x) + 1] = NONE;
-            }
-            if ((maze[y][x] & L) == 0) {
-                grid[gi(y)][gi(x) - 1] = NONE;
-            }
-        }
-    }
-
-    return grid;
-}
-
-/**
- * Moves pos a step in the x or y direction (not diagonally)
- * @param {p5.Vector} pos 
- */
-function takeRandomStep(pos, stepsize = 1) {
-    switch (Math.floor(random(4))) {
-        case 0:
-            pos.x += stepsize;
-            break;
-        case 1:
-            pos.x -= stepsize;
-            break;
-        case 2:
-            pos.y += stepsize;
-            break;
-        case 3:
-            pos.y -= stepsize;
-            break;
-    }
-    return pos;
 }
 
 /**
@@ -1178,67 +1166,7 @@ function findPlaceNotInWall(grid) {
     return random(halls);
 }
 
-/**
- * Finds a random grid cell where "predicate" evaluates to true. Does this by
- * making a list of all matching cells and returning a random one.
- * @param {number[][]} grid raw grid data
- * @param {boolean} incOuterWall true to include the outer most 'layer' of cells in search.
- * @param {(x:number,y:number)=>boolean} predicate func to return true if cell is to be possibly randomly selected
- * @returns {p5.Vector|undefined} position or undefined if there are no walls (other than exterior)
- */
-function randPosPredicate(grid, incOuterWall = false, predicate = (x, y) => cellIs(grid[y][x], SOLID)) {
-    const gh = grid.length;
-    const gw = grid[0].length;
-    const ow = incOuterWall ? 1 : 0;
-    let walls = [];
-    for (let y = 1 - ow; y < gh - 1 + ow; y++) {
-        for (let x = 1 - ow; x < gw - 1 + ow; x++) {
-            if (predicate(x, y)) {
-                walls.push(createVector(x, y));
-            }
-        }
-    }
-    return random(walls);
-}
 
-/**
- * Converts the 3 high bytes of a cell's data to a color (in the form of
- * a 3d vector).
- * @param {number} cell cell's data
- * @return {p5.Vector}
- */
-function colorFromCell(cell) {
-    return createVector(
-        (cell & COLOR_R) >>> R_SHIFT,
-        (cell & COLOR_G) >>> G_SHIFT,
-        (cell & COLOR_B) >>> B_SHIFT
-    );
-}
-
-/**
- * converts a color stored in a p5.Vector to a p5.Color.
- * @param {p5.Vector} v color as a vector
- */
-function vecToColor(v) {
-    return color(v.x, v.y, v.z);
-}
-
-/**
- * Encodes a color (as RGB) to the 3 high bytes used in a cell's data.
- * @param {number} r 
- * @param {number} g 0-3
- * @param {number} b 0-3
- */
-function makeGridColor(r, g, b) {
-    return r << R_SHIFT | g << G_SHIFT | b << B_SHIFT;
-}
-
-
-
-// masks
-// cells are 32 bits (4 bytes).
-// the low byte is flags.
-// the high 3 bytes are for color or texture info.
 //
 const NONE = 0;
 const SOLID = 0b00000001;
@@ -1246,13 +1174,3 @@ const ENTRY = 0b00000010;
 const EXIT = SOLID | ENTRY;
 const HIDDEN = 0b00000100;
 
-const R_SHIFT = 24;
-const G_SHIFT = 16;
-const B_SHIFT = 8;
-// const R_SHIFT = 2;
-// const G_SHIFT = 2;
-// const B_SHIFT = 2;
-const COLOR_R = 0xFF << R_SHIFT;
-const COLOR_G = 0xFF << G_SHIFT;
-const COLOR_B = 0xFF << B_SHIFT;
-const COLOR_W = COLOR_R | COLOR_G | COLOR_B;

@@ -113,6 +113,35 @@ class Renderer
         }
     }
 
+    clear(ID)
+    {
+        var backupID = ID;
+        for (var key in this.lastFramePixels)
+        {
+            ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
+            try{
+                document.getElementById(ID).checked = false;
+            }
+            catch(err)
+            {
+                //console.log("Failed to assign pixel: " + ID);
+            }
+        }
+        for (var key in this.pixels)
+        {
+            ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
+            try{
+                document.getElementById(ID).checked = false;
+            }
+            catch(err)
+            {
+                //console.log("Failed to assign pixel: " + ID);
+            }
+        }
+        this.pixels = {};
+        this.lastFramePixels = {};
+    }
+
     updateScore()
     {
         resetUI();
@@ -192,19 +221,76 @@ class Renderer
     }
 
 
-    DrawSprite(x,y,type,distance)
+    DrawSprite(x,y,type,distance, spriteSheet = 0)
     {
-        this.SetPixel([x,y]);
-
-        for (var i = 0; i < spriteManager[type][distance].length; i++) 
+        if (spriteSheet == 0) //regular sprite manager
         {
-            if (spriteManager[type][distance][i][2] == 1) //on
+            for (var i = 0; i < spriteManager[type][distance].length; i++) 
             {
-                this.SetPixel([x + spriteManager[type][distance][i][0],y + spriteManager[type][distance][i][1]]);
+                if (spriteManager[type][distance][i][2] == 1) //on
+                {
+                    this.SetPixel([x + spriteManager[type][distance][i][0],y + spriteManager[type][distance][i][1]]);
+                }
+                else if (spriteManager[type][distance][i][2] == 2) //force off
+                {
+                    this.UnsetPixel([x + spriteManager[type][distance][i][0],y + spriteManager[type][distance][i][1]]);
+                }
             }
-            else if (spriteManager[type][distance][i][2] == 2) //force off
+        }
+        else if (spriteSheet == 1) //gun
+        {
+            for (var i = 0; i < gun[type].length; i++) 
             {
-                this.UnsetPixel([x + spriteManager[type][distance][i][0],y + spriteManager[type][distance][i][1]]);
+                if (gun[type][i][2] == 1) //on
+                {
+                    this.SetPixel([x + gun[type][i][0],y + gun[type][i][1]]);
+                }
+                else if (gun[type][i][2] == 2) //force off
+                {
+                    this.UnsetPixel([x + gun[type][i][0],y + gun[type][i][1]]);
+                }
+            }
+        }
+        else if (spriteSheet == 2) //on screen text
+        {
+            for (var i = 0; i < onScreenText[type].length; i++) 
+            {
+                if (onScreenText[type][i][2] == 1) //on
+                {
+                    this.SetPixel([x + onScreenText[type][i][0],y + onScreenText[type][i][1]]);
+                }
+                else if (onScreenText[type][i][2] == 2) //force off
+                {
+                    this.UnsetPixel([x + onScreenText[type][i][0],y + onScreenText[type][i][1]]);
+                }
+            }
+        }
+        else if (spriteSheet == 3) //blood
+        {
+            for (var i = 0; i < blood.length; i++) 
+            {
+                if (blood[i][2] == 1) //on
+                {
+                    this.SetPixel([x + blood[i][0],y + blood[i][1]]);
+                }
+                else if (blood[i][2] == 2) //force off
+                {
+                    this.UnsetPixel([x + blood[i][0],y + blood[i][1]]);
+                }
+            }
+        }
+        else if (spriteSheet == 4) //title screen
+        {
+            for (var i = 0; i < titleScreen.length; i++) 
+            {
+                if (titleScreen[i][2] == 1) //on
+                {
+                    this.SetPixel([x + titleScreen[i][0],y + titleScreen[i][1]]);
+                }
+                else if (titleScreen[i][2] == 2) //force off
+                {
+                    this.UnsetPixel([x + titleScreen[i][0],y + titleScreen[i][1]]);
+                }
             }
         }
     }
