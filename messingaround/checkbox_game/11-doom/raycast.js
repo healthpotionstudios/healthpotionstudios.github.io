@@ -58,6 +58,7 @@ imageOffsets = [
 ];
 
 /**
+ * Original Credits:
  * This p5.js sketch creates a maze and renders it in 3D using a form of 
  * "raycasting" similar to the method used in Wolfenstein 3D by id Software. It 
  * can also display the maze from a top-down 2D map-perspective. I was inspired
@@ -67,6 +68,13 @@ imageOffsets = [
  * Originally written in December 2018 by Ben (quillaja).
  * Live demo at: http://quillaja.net/raymaze/sketch.html
  * Github: https://github.com/quillaja/raymaze
+ * 
+ * 
+ * Health Potion Credits:
+ * Later completely butchered in 2020 by Alex Wagner.
+ * The later edits modified Ben's code to work with the checkbox
+ * render system and adding code to play Doom.
+ * 
  */
 
 /**
@@ -817,6 +825,12 @@ function updateMiniMap()
 
 
 
+//=======================================================================
+// Most of the code below is Ben's original code. Small parts were changed
+// and much was removed
+//=======================================================================
+
+
 /**
  * set up params for doing rendering calcs
  */
@@ -1167,7 +1181,7 @@ function findPlaceNotInWall(grid) {
 }
 
 
-//
+// these might not even be used in Doom
 const NONE = 0;
 const SOLID = 0b00000001;
 const ENTRY = 0b00000010;
