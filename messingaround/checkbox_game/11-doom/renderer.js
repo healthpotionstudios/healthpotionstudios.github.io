@@ -118,8 +118,9 @@ class Renderer
         var backupID = ID;
         for (var key in this.lastFramePixels)
         {
-            ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
+            
             try{
+                ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
                 document.getElementById(ID).checked = false;
             }
             catch(err)
@@ -129,8 +130,9 @@ class Renderer
         }
         for (var key in this.pixels)
         {
-            ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
+            
             try{
+                ID = backupID + "-" + this.pixels[key][1].toString() + "," + this.pixels[key][0].toString();
                 document.getElementById(ID).checked = false;
             }
             catch(err)
