@@ -70,7 +70,7 @@ class NPC
         if (this.health != -2) //has health
         {
             this.health--;
-            enemyHitSound.setVolume(1.3 - (this.pdist/10));
+            enemyHitSound.volume(.85 - (this.pdist/10));
             enemyHitSound.play();
             if (this.health == 0)
             {
@@ -102,12 +102,12 @@ class NPC
     {
         if (this.type == 0)
         {
-            impSound.setVolume(1 - (this.pdist/10));
+            impSound.volume(1 - (this.pdist/10));
             impSound.play();
         }
         else if (this.type == 2)
         {
-            cacoSound.setVolume(1 - (this.pdist/10));
+            cacoSound.volume(1 - (this.pdist/10));
             cacoSound.play();
         }
         spawnEnemyBullet(this.pos.x, this.pos.y);

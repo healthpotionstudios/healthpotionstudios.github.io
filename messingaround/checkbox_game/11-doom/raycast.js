@@ -35,7 +35,53 @@ level2Data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 
 level3Data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 0, 1], [1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 1, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]];
 
 //music
-let hurtSound, shootSound, impSound, cacoSound, dieSound, levelMusic, reloadSound,healthSound,doorSound,enemySound,enemyHitSound;
+
+var hurtSound = new Howl({
+    src: ['hurt.wav']
+  });
+
+  var shootSound = new Howl({
+    src: ['shoot.wav']
+  });
+
+  var impSound = new Howl({
+    src: ['imp.wav']
+  });
+
+  var cacoSound = new Howl({
+    src: ['cacodemon.wav']
+  });
+
+  var dieSound = new Howl({
+    src: ['die.wav']
+  });
+
+  var reloadSound = new Howl({
+    src: ['reload.wav']
+  });
+
+  var healthSound = new Howl({
+    src: ['health.wav']
+  });
+
+  var doorSound = new Howl({
+    src: ['door.wav']
+  });
+
+  var enemySound = new Howl({
+    src: ['enemyHit.wav']
+  });
+
+  var enemyHitSound = new Howl({
+    src: ['enemyDie.wav']
+  });
+
+
+  var levelMusic = new Howl({
+    src: ['level.mp3'],
+    loop: true
+  });
+  
 
 imageSizes = [
     [35,40], //0
@@ -139,23 +185,23 @@ let raywidth = 0; // alters number of rays used/"resolution" of walls.
 /**
  * load necessary resources.
  */
-function preload() {
+// function preload() {
 
 
-    hurtSound = loadSound('hurt.wav');
-    shootSound = loadSound('shoot.wav');
-    impSound = loadSound('imp.wav');
-    cacoSound = loadSound('cacodemon.wav');
-    dieSound = loadSound('die.wav');
-    reloadSound = loadSound('reload.wav');
-    healthSound = loadSound('health.wav');
-    doorSound = loadSound('door.wav');
-    enemySound = loadSound('enemyDie.wav');
-    enemyHitSound = loadSound('enemyHit.wav');
+//     hurtSound = loadSound('hurt.wav');
+//     shootSound = loadSound('shoot.wav');
+//     impSound = loadSound('imp.wav');
+//     cacoSound = loadSound('cacodemon.wav');
+//     dieSound = loadSound('die.wav');
+//     reloadSound = loadSound('reload.wav');
+//     healthSound = loadSound('health.wav');
+//     doorSound = loadSound('door.wav');
+//     enemySound = loadSound('enemyDie.wav');
+//     enemyHitSound = loadSound('enemyHit.wav');
 
-    levelMusic = loadSound('level.mp3');
+//     levelMusic = loadSound('level.mp3');
 
-}
+// }
 
 /**
  * Set up the sketch.
@@ -693,10 +739,6 @@ function endOfLevel()
     currentLevel ++;
     if (currentLevel == 2)
     {
-        if (!levelMusic.isPlaying())
-        {
-            levelMusic.play();
-        }
         updateGameplayUI();
         cam.moveCam(playerStart[1][0], playerStart[1][1]);
         grid = new Grid(level2Data);
@@ -733,10 +775,6 @@ function endOfLevel()
     }
     else if (currentLevel == 3)
     {
-        if (!levelMusic.isPlaying())
-        {
-            levelMusic.play();
-        }
         updateGameplayUI()
         cam.moveCam(playerStart[2][0], playerStart[2][1]);
         grid = new Grid(level3Data);
